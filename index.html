@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hung-Ta Lai (Eddie) — Resume</title>
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body {
+    font-family: "Charter", "Georgia", "Times New Roman", serif;
+    font-size: 10.3pt;
+    line-height: 1.38;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  body { max-width: 190mm; margin: 0 auto; padding: 10mm 0; }
+  a { color: #1a4d8f; text-decoration: none; border-bottom: 1px solid #1a4d8f44; }
+  a:hover { border-bottom-color: #1a4d8f; }
+  h1 {
+    font-size: 26pt;
+    text-align: center;
+    margin: 0 0 4pt;
+    font-weight: 700;
+    letter-spacing: 0.3pt;
+  }
+  .contact {
+    text-align: center;
+    font-size: 9.5pt;
+    margin-bottom: 6pt;
+  }
+  .contact span { margin: 0 6pt; }
+  .tagline {
+    text-align: center;
+    font-style: italic;
+    font-size: 10.3pt;
+    color: #333;
+    margin: 2pt 0 10pt;
+    padding: 0 10mm;
+  }
+  .tagline b { font-style: normal; }
+  h2 {
+    font-size: 12pt;
+    color: #1a4d8f;
+    margin: 11pt 0 3pt;
+    padding-bottom: 2pt;
+    border-bottom: 1px solid #1a4d8f;
+    letter-spacing: 0.3pt;
+  }
+  h3 {
+    font-size: 10.5pt;
+    margin: 6pt 0 2pt;
+    font-weight: 700;
+  }
+  .role-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10.5pt;
+    margin-top: 4pt;
+  }
+  .role-line .title { font-weight: 700; }
+  .role-line .date { font-style: italic; color: #555; font-size: 9.8pt; }
+  .subtitle { font-style: italic; font-size: 10pt; color: #444; margin-bottom: 3pt; }
+  .blurb { margin: 2pt 0 4pt; }
+  ul { margin: 2pt 0 4pt 16pt; padding: 0; }
+  ul ul { margin-top: 1pt; }
+  li { margin-bottom: 2pt; }
+  .skills li { margin-bottom: 1.5pt; }
+  .skills b { display: inline-block; min-width: 95pt; }
+  .closing {
+    margin-top: 10pt;
+    padding-top: 6pt;
+    border-top: 1px solid #bbb;
+    font-size: 9.8pt;
+    text-align: center;
+  }
+  .closing b { color: #1a4d8f; }
+</style>
+</head>
+<body>
+
+<h1>Hung-Ta Lai (Eddie)</h1>
+
+<div class="contact">
+  <span>📞 0983-088-254</span>
+  <span>✉ <a href="mailto:eddlai.be10@nycu.edu.tw">eddlai.be10@nycu.edu.tw</a></span>
+  <span>in <a href="https://linkedin.com/in/YOUR-HANDLE">linkedin</a></span>
+  <span>⌘ <a href="https://github.com/eddLai">github.com/eddLai</a></span>
+</div>
+
+<div class="tagline">
+  Building <b>ExoPulse</b> — closed-loop AI medical exoskeletons for elder mobility.<br>
+  BMI / HMI researcher at NYCU. Shipping research from lab to clinic.
+</div>
+
+<!-- ============ FOUNDER EXPERIENCE ============ -->
+<h2>Founder Experience</h2>
+
+<div class="role-line">
+  <span class="title">ExoPulse</span>
+  <span class="date">[YYYY–Present]</span>
+</div>
+<div class="subtitle">Founder &amp; CEO — Technical Lead, team of ~10</div>
+
+<div class="blurb">
+  Closed-loop AI medical exoskeleton for elders and pre-frail individuals,
+  built on digital-twin simulation and deep reinforcement learning control.
+</div>
+
+<ul>
+  <li>Lead a cross-functional team of ~10 across firmware, ML, mechanical design,
+    and clinical coordination. Own the technical roadmap end-to-end: D4PG
+    reinforcement learning controller, OpenSim + Hill-type digital twin pipeline,
+    embedded firmware on Xilinx KV260 FPGA and Nordic IoT, wireless 1 kHz EMG
+    acquisition, and mechanical prototype.</li>
+  <li><b>Traction:</b> Active clinical collaborations with <b>three hospitals</b>
+    for pilot testing and validation.</li>
+  <li>Pitched to US investors at <b>Pitch in New York</b>.
+    <a href="https://YOUR-PITCH-VIDEO">Pitch Video</a> ·
+    <a href="https://YOUR-DECK">Deck</a></li>
+  <li><b>3rd Prize, iCREATE-GSIC Global Competition</b> — Taiwan representative,
+    awarded by HRH the Princess Royal.
+    <a href="https://YOUR-VIDEO">Video</a> ·
+    <a href="https://YOUR-PROPOSAL">Proposal</a></li>
+  <li>Featured on <b>PTS National News</b> (Feb 19, 2025) via joint press conference
+    with Taipei Veterans General Hospital (TVGH).
+    <a href="https://YOUR-NEWS-LINK">News</a></li>
+</ul>
+
+<!-- ============ RESEARCH EXPERIENCE ============ -->
+<h2>Research Experience</h2>
+
+<div class="role-line">
+  <span class="title">NYCU Department of Biomedical Engineering</span>
+  <span class="date">[YYYY–Present]</span>
+</div>
+<div class="subtitle">Research Assistant across four concurrent projects</div>
+
+<h3>Exoskeleton Power Augmentation (HMI) — Tech Lead</h3>
+<ul>
+  <li>Built embedded control stack on Xilinx FPGA KV260+KD240 and Nordic IoT
+    (migrated from ESP32) for real-time closed-loop exoskeleton control.</li>
+  <li>Implemented D4PG distributed deep RL for human–machine interaction;
+    integrated with OpenSim / SCONE musculoskeletal simulation and EMG-based
+    motion-intent prediction.</li>
+  <li><b>Independently built</b> a wireless EMG acquisition system at 1 kHz
+    sampling outside lab scope. First-author paper at GCBME.
+    <a href="https://YOUR-ABSTRACT">Abstract</a> ·
+    <a href="https://YOUR-SLIDES">Slides</a></li>
+</ul>
+
+<h3>Markerless Motion Capture — Tech Lead</h3>
+<ul>
+  <li>Built AI-based 3D human pose estimation pipeline; validated against Vicon
+    ground truth.</li>
+  <li>Shipped real-time video-streaming web UI and one-click Docker deployment
+    adopted by lab researchers.</li>
+  <li>Work featured in NYCU × TVGH joint press conference, Feb 2025.
+    <a href="https://YOUR-PRESS-VIDEO">Press Conference</a></li>
+</ul>
+
+<h3>Neural Decoding (BMI / BCI)</h3>
+<ul>
+  <li>Conducted rodent behavior experiments for neural signal decoding using
+    Temporal Convolutional Networks (TCN) for time-series regression.</li>
+  <li>Participated in electrode fabrication and implantation; designed 3D-printed
+    behavioral apparatus (sliding rail, rat behavior box, water supply platform).
+    <a href="https://YOUR-RAIL">Sliding Rail</a> ·
+    <a href="https://YOUR-BOX">Behavior Box</a></li>
+</ul>
+
+<h3>Biochemical Wearable Sensor</h3>
+<ul>
+  <li>Integrated MCU-controlled TI LMP91000 electrochemical AFE; performed circuit
+    simulation and PCB layout for wearable real-time health monitoring.</li>
+  <li><b>1st Prize (National), MOE Innovation &amp; Entrepreneurship Competition.</b>
+    <a href="https://YOUR-PITCH">Pitch</a> ·
+    <a href="https://YOUR-DECK2">Deck</a></li>
+</ul>
+
+<!-- ============ SKILLS ============ -->
+<h2>Technical Skills</h2>
+<ul class="skills">
+  <li><b>Core:</b> Reinforcement Learning (D4PG), BMI / HMI, Embedded AI, Digital Twins</li>
+  <li><b>Hardware:</b> Xilinx FPGA (KV260 / KD240, Vivado / Vitis), Nordic, ESP32, MSP430, Jetson Nano, Raspberry Pi</li>
+  <li><b>Signal &amp; Sim:</b> EMG (custom 1 kHz rig), LFP, spike sorting, OpenSim, SCONE, Hill-type muscle models</li>
+  <li><b>ML / CV:</b> PyTorch, TCN, Transformers, markerless 3D pose estimation</li>
+  <li><b>Software / DevOps:</b> C++, Python, JavaScript, Docker, Git, Slurm, ROS, X11</li>
+  <li><b>Hardware CAD:</b> KiCAD, AutoCAD, Shape3D, 3D printing, PCB layout</li>
+  <li><b>Other:</b> VR (Meta Quest 3), NSTC project budget &amp; BOM management</li>
+</ul>
+
+<!-- ============ EDUCATION ============ -->
+<h2>Education</h2>
+<div class="role-line">
+  <span class="title">National Yang Ming Chiao Tung University (NYCU)</span>
+  <span class="date">[YYYY–YYYY]</span>
+</div>
+<div class="subtitle">BS + MS, Biomedical Engineering — Five-year Integrated 4+1 Program (in progress)</div>
+
+<!-- ============ AWARDS ============ -->
+<h2>Selected Awards &amp; Recognition</h2>
+<ul>
+  <li><b>2024 NSTC College Student Research Scholarship</b> — Multimodal neural
+    decoding of posture and gait via the posterior parietal cortex – M2 pathway.
+    <a href="https://YOUR-REPORT">Final Report</a></li>
+  <li><b>Outstanding Paper Award, Chinese Institute of Engineers (CIE)</b></li>
+  <li><b>2nd Prize, NVIDIA AIoT Challenge</b> — Jetson Nano edge-AI CV application</li>
+  <li><i>Additional: Macronix Competition (Hip Exoskeleton + AR), Matlab Poster
+    Competition (RL for exoskeleton closed-loop control).</i></li>
+</ul>
+
+<!-- ============ TEACHING & LEADERSHIP ============ -->
+<h2>Teaching &amp; Leadership</h2>
+<ul>
+  <li><b>Advanced Teaching Assistant &amp; Course Designer</b>, Embedded Systems and
+    C++ Programming, NYCU BME. Mentored students on MSP430; designed lab sessions.
+    <a href="https://YOUR-PORTFOLIO">Teaching Portfolio</a></li>
+  <li><b>Preliminary Interviewer</b>, Taiwan Experience Education Program (TEEP)
+    — screened exchange student candidates for exoskeleton collaboration.</li>
+  <li><b>Exhibitor</b>, International Medical Technology Exhibition (Nangang, Taipei)
+    — co-exhibited with the Institute for Information Industry (III).</li>
+  <li><b>Event Lead</b>, BME Orientation Camp and BME Night, NYCU. NYCU varsity Soft
+    Tennis (National University Games, Men's Singles); Taipei–Kaohsiung one-day
+    cycling challenge.</li>
+</ul>
+
+<div class="closing">
+  <b>Open to:</b> healthtech investor conversations (pre-seed / seed) ·
+  clinical collaborators in rehab and geriatrics ·
+  full-time engineering roles in BMI, robotics, or medical devices.
+</div>
+
+</body>
+</html>
