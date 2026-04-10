@@ -916,7 +916,7 @@
           <h2 data-zh="技術 <em>能力</em>">Technical <em>Skills</em></h2>
         </div>
         <div></div>
-        <div class="folio" data-zh="第 03 章 / 共 06 章<br>嵌入式 · ML · 生醫訊號 · 軟體">F–03 / 06<br>EMBEDDED · ML · BIOSIGNAL · SW</div>
+        <div class="folio" data-zh="第 03 章 / 共 06 章<br>嵌入式 · ML · 生醫訊號 · 軟體">F–03 / 06<br>EMBEDDED · ML · BIOSIGNAL · HW · SW</div>
       </div>
 
       <p class="lede" style="margin-bottom:32px" data-zh="從 EMG 電極到 FPGA 嵌入式部署的端到端生醫系統經驗。以下依<b>行業領域</b>分類，粗體為深度專精。">
@@ -968,6 +968,40 @@
         .skill-secondary span { display: inline-block; margin-right: 6px; }
         .skill-secondary span::before { content: "· "; opacity: .5; }
 
+        .skill-sw {
+          background: var(--paper);
+          padding: 22px 26px;
+          grid-column: 1 / -1;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: baseline;
+          gap: 6px 22px;
+        }
+        .skill-sw h4 {
+          font-family: "JetBrains Mono", monospace;
+          font-size: 10px;
+          letter-spacing: .22em;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin-right: 10px;
+          flex-shrink: 0;
+        }
+        html[lang="zh-Hant"] .skill-sw h4 { font-family: "Noto Serif TC", monospace; font-size: 12px; letter-spacing: .08em; }
+        .skill-sw span {
+          font-family: "JetBrains Mono", monospace;
+          font-size: 11px;
+          color: var(--ink-2);
+          letter-spacing: .06em;
+        }
+        html[lang="zh-Hant"] .skill-sw span { font-family: "Noto Serif TC", monospace; font-size: 12px; }
+        .skill-sw b {
+          font-family: "JetBrains Mono", monospace;
+          font-size: 11px;
+          color: var(--ink);
+          letter-spacing: .06em;
+          font-weight: 600;
+        }
+
         @media (max-width: 640px) {
           .skill-grid { grid-template-columns: 1fr; }
         }
@@ -999,24 +1033,29 @@
 
         <div class="skill-domain" data-num="/03">
           <h4 data-zh="生醫訊號 / 模擬">Biomedical Signal / Simulation</h4>
-          <div class="skill-primary" data-zh="<b>EMG</b> <em>— 自製 1 kHz 無線擷取</em><br><b>OpenSim + SCONE</b> · Hill-type · <b>數位分身</b>">
-            <b>EMG</b> <em>&mdash; custom 1 kHz wireless acquisition</em><br>
-            <b>OpenSim + SCONE</b> &middot; Hill-type &middot; <b>Digital twins</b>
+          <div class="skill-primary" data-zh="<b>OpenSim + SCONE</b> 肌骨骼模擬<br><b>Hill-type 肌肉模型</b> · <b>數位分身</b> pipeline">
+            <b>OpenSim + SCONE</b> musculoskeletal simulation<br>
+            <b>Hill-type muscle models</b> &middot; <b>Digital twin</b> pipeline
           </div>
-          <div class="skill-secondary" data-zh="<span>LFP</span><span>spike sorting</span><span>電極製造</span><span>TI LMP91000 AFE</span><span>生化穿戴感測</span>">
-            <span>LFP</span><span>spike sorting</span><span>electrode fabrication</span><span>TI LMP91000 AFE</span><span>biochemical wearable</span>
+          <div class="skill-secondary" data-zh="<span>EMG 訊號處理</span><span>LFP</span><span>spike sorting</span>">
+            <span>EMG signal processing</span><span>LFP</span><span>spike sorting</span>
           </div>
         </div>
 
         <div class="skill-domain" data-num="/04">
-          <h4 data-zh="軟體工程 / 硬體 CAD">Software Engineering / Hardware CAD</h4>
-          <div class="skill-primary" data-zh="<b>C++</b> · <b>Python</b> · JavaScript<br>Docker · Git · Slurm">
-            <b>C++</b> &middot; <b>Python</b> &middot; JavaScript<br>
-            Docker &middot; Git &middot; Slurm
+          <h4 data-zh="硬體設計 / 製造">Hardware Design / Fabrication</h4>
+          <div class="skill-primary" data-zh="<b>自製 1 kHz 無線 EMG 擷取系統</b><br><b>電極製造與植入</b> · TI LMP91000 電化學 AFE">
+            <b>Custom 1 kHz wireless EMG rig</b><br>
+            <b>Electrode fabrication</b> &middot; TI LMP91000 electrochemical AFE
           </div>
-          <div class="skill-secondary" data-zh="<span>KiCAD</span><span>PCB 佈局</span><span>AutoCAD</span><span>Shape3D</span><span>3D 列印</span><span>VR (Meta Quest 3)</span>">
-            <span>KiCAD</span><span>PCB layout</span><span>AutoCAD</span><span>Shape3D</span><span>3D printing</span><span>VR (Meta Quest 3)</span>
+          <div class="skill-secondary" data-zh="<span>KiCAD</span><span>PCB 佈局</span><span>AutoCAD</span><span>Shape3D</span><span>3D 列印</span><span>生化穿戴感測器</span>">
+            <span>KiCAD</span><span>PCB layout</span><span>AutoCAD</span><span>Shape3D</span><span>3D printing</span><span>biochemical wearable sensor</span>
           </div>
+        </div>
+
+        <div class="skill-sw">
+          <h4 data-zh="軟體工程">Software Engineering</h4>
+          <b>C++</b> <b>Python</b> <span>JavaScript</span> <span>Docker</span> <span>Git</span> <span>Slurm</span> <span data-zh="VR (Meta Quest 3)">VR (Meta Quest 3)</span>
         </div>
 
       </div>
