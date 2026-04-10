@@ -721,7 +721,6 @@
   <div class="subline">
     <span data-zh="第一卷 · <span class='issue'>2026 第四期</span>">VOL. I · <span class="issue">ISSUE Ⅳ / 2026</span></span>
     <span>✉ <a href="mailto:christina900909@gmail.com">christina900909@gmail.com</a></span>
-    <span>☎ +886 960-628-908</span>
     <span>in <a href="https://www.linkedin.com/in/wenling-tsai-327427370">linkedin</a></span>
     <span data-zh="📍 台北，台灣">📍 TAIPEI, TAIWAN</span>
   </div>
@@ -1053,6 +1052,90 @@
 
   </div>
 
+  <!-- ============ CORRESPONDENCE / Q&A ============ -->
+  <style>
+    .qa { margin-top: 90px; position: relative; z-index: 2; }
+    .qa .sec-head { margin-bottom: 32px; }
+    .qa-lede {
+      font-family: "Newsreader", "Noto Serif TC", serif;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 40px;
+      padding-left: 18px;
+      border-left: 2px solid var(--accent);
+    }
+    html[lang="zh-Hant"] .qa-lede { font-style: normal; font-size: 16px; line-height: 1.8; }
+    .qa-lede b { color: var(--ink); font-weight: 500; font-style: normal; }
+    .qa-mount { position: relative; min-height: 180px; }
+    .qa-loading {
+      font-family: "Newsreader", "Noto Serif TC", serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: .04em;
+      color: var(--muted);
+      padding: 28px 0;
+      border-top: 1px dashed var(--hair);
+      border-bottom: 1px dashed var(--hair);
+      text-align: center;
+    }
+    html[lang="zh-Hant"] .qa-loading { font-style: normal; letter-spacing: .15em; }
+    .qa-loading::before,
+    .qa-loading::after { content: "  ·  "; opacity: .5; }
+    .qa-mount.loaded .qa-loading { display: none; }
+    .qa-mount .giscus,
+    .qa-mount .giscus-frame { max-width: 100% !important; width: 100% !important; }
+    @media print { .qa { display: none !important; } }
+  </style>
+
+  <section class="qa" id="qa">
+    <div class="sec-head">
+      <div>
+        <span class="kicker" data-zh="附錄 · 通信">Appendix · Correspondence</span>
+        <h2 data-zh="開放 <em>通信</em>">Corresp<em>ondence</em></h2>
+      </div>
+      <div></div>
+      <div class="folio" data-zh="附錄 A<br>讀者來信">APPENDIX · A<br>LETTERS TO THE EDITOR</div>
+    </div>
+
+    <p class="qa-lede" data-zh="臨床試驗單位、研究合作者、同行護理師 — 在下方留下問題或想法。<b>來信透過 GitHub Discussions 傳遞</b>，請備好你的 handle。">
+      Clinical research teams, collaborators, and fellow nurses &mdash; drop a question or a note below. <b>Letters are routed through GitHub Discussions.</b> Bring your handle.
+    </p>
+
+    <div class="qa-mount" id="qa-mount">
+      <div class="qa-loading" data-zh="正在載入來信">loading correspondence</div>
+      <script src="https://giscus.app/client.js"
+              data-repo="eddLai/open_resume"
+              data-repo-id="REPLACE_WITH_REPO_ID"
+              data-category="Q&A"
+              data-category-id="REPLACE_WITH_CATEGORY_ID"
+              data-mapping="specific"
+              data-term="christina-dossier"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="https://eddlai.github.io/open_resume/giscus-christina.css"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </section>
+
+  <script>
+    // Hide QA loading placeholder once Giscus posts its first resize message
+    window.addEventListener('message', (e) => {
+      if (e.origin === 'https://giscus.app' && e.data && e.data.giscus) {
+        document.getElementById('qa-mount')?.classList.add('loaded');
+      }
+    });
+    // Fallback: hide after 4s even if no message arrives
+    setTimeout(() => document.getElementById('qa-mount')?.classList.add('loaded'), 4000);
+  </script>
+
   <!-- ============ COLOPHON ============ -->
   <footer class="colophon">
     <h3 data-zh="歡迎洽談：<b>臨床試驗監測員 (CRA)</b> 職缺、臨床試驗協調工作，以及將臨床嚴謹帶入研究方法的 <b>醫療創新</b> 職位。">
@@ -1061,7 +1144,6 @@
     <div class="links">
       <a href="mailto:christina900909@gmail.com" data-zh="✉ 電子郵件">✉ EMAIL</a>
       <a href="https://www.linkedin.com/in/wenling-tsai-327427370">in LINKEDIN</a>
-      <a href="tel:+886960628908">☎ +886 960-628-908</a>
     </div>
   </footer>
 

@@ -1,0 +1,256 @@
+/* ============================================================
+   giscus-christina.css — Clinical Editorial Theme (Christina)
+   Matches: Fraunces + Newsreader + Noto Serif TC + JetBrains Mono
+   Palette: #f3ede0 paper · #111c22 ink · #3d6043 accent (forest)
+   ============================================================ */
+
+main {
+  /* Syntax highlighting */
+  --color-prettylights-syntax-comment: #5a5648;
+  --color-prettylights-syntax-constant: #3d6043;
+  --color-prettylights-syntax-entity: #a87d2a;
+  --color-prettylights-syntax-storage-modifier-import: #111c22;
+  --color-prettylights-syntax-entity-tag: #3d6043;
+  --color-prettylights-syntax-keyword: #3d6043;
+  --color-prettylights-syntax-string: #a87d2a;
+  --color-prettylights-syntax-variable: #a87d2a;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #c8461e;
+  --color-prettylights-syntax-invalid-illegal-text: #f3ede0;
+  --color-prettylights-syntax-invalid-illegal-bg: #c8461e;
+  --color-prettylights-syntax-carriage-return-text: #f3ede0;
+  --color-prettylights-syntax-carriage-return-bg: #c8461e;
+  --color-prettylights-syntax-string-regexp: #3d6043;
+  --color-prettylights-syntax-markup-list: #a87d2a;
+  --color-prettylights-syntax-markup-heading: #111c22;
+  --color-prettylights-syntax-markup-italic: #1f3139;
+  --color-prettylights-syntax-markup-bold: #111c22;
+  --color-prettylights-syntax-markup-deleted-text: #c8461e;
+  --color-prettylights-syntax-markup-deleted-bg: rgba(200,70,30,.1);
+  --color-prettylights-syntax-markup-inserted-text: #3d6043;
+  --color-prettylights-syntax-markup-inserted-bg: rgba(61,96,67,.1);
+  --color-prettylights-syntax-markup-changed-text: #a87d2a;
+  --color-prettylights-syntax-markup-changed-bg: rgba(168,125,42,.1);
+  --color-prettylights-syntax-markup-ignored-text: #f3ede0;
+  --color-prettylights-syntax-markup-ignored-bg: #111c22;
+  --color-prettylights-syntax-meta-diff-range: #a87d2a;
+  --color-prettylights-syntax-brackethighlighter-angle: #5a5648;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: rgba(17,28,34,.3);
+  --color-prettylights-syntax-constant-other-reference-link: #3d6043;
+
+  /* Buttons */
+  --color-btn-text: #111c22;
+  --color-btn-bg: #e8dfca;
+  --color-btn-border: rgba(17,28,34,.28);
+  --color-btn-shadow: none;
+  --color-btn-inset-shadow: none;
+  --color-btn-hover-bg: #f3ede0;
+  --color-btn-hover-border: #111c22;
+  --color-btn-active-bg: #ddd0b3;
+  --color-btn-active-border: #111c22;
+  --color-btn-selected-bg: #e8dfca;
+  --color-btn-primary-text: #f3ede0;
+  --color-btn-primary-bg: #3d6043;
+  --color-btn-primary-border: #3d6043;
+  --color-btn-primary-shadow: none;
+  --color-btn-primary-inset-shadow: none;
+  --color-btn-primary-hover-bg: #111c22;
+  --color-btn-primary-hover-border: #111c22;
+  --color-btn-primary-selected-bg: #111c22;
+  --color-btn-primary-selected-shadow: none;
+  --color-btn-primary-disabled-text: rgba(17,28,34,.4);
+  --color-btn-primary-disabled-bg: rgba(61,96,67,.3);
+  --color-btn-primary-disabled-border: transparent;
+
+  /* Action list & segmented control */
+  --color-action-list-item-default-hover-bg: #e8dfca;
+  --color-segmented-control-bg: #e8dfca;
+  --color-segmented-control-button-bg: #f3ede0;
+  --color-segmented-control-button-selected-border: #111c22;
+
+  /* Foreground & background */
+  --color-fg-default: #111c22;
+  --color-fg-muted: #5a5648;
+  --color-fg-subtle: #8a8574;
+  --color-fg-on-emphasis: #f3ede0;
+  --color-canvas-default: transparent;
+  --color-canvas-overlay: #f3ede0;
+  --color-canvas-inset: #e8dfca;
+  --color-canvas-subtle: rgba(232,223,202,.45);
+
+  /* Borders */
+  --color-border-default: rgba(17,28,34,.22);
+  --color-border-muted: rgba(17,28,34,.14);
+  --color-neutral-muted: rgba(17,28,34,.08);
+  --color-neutral-emphasis-plus: #111c22;
+
+  /* Accent — forest green */
+  --color-accent-fg: #3d6043;
+  --color-accent-emphasis: #3d6043;
+  --color-accent-muted: rgba(61,96,67,.35);
+  --color-accent-subtle: rgba(61,96,67,.1);
+
+  /* Success / attention / danger */
+  --color-success-fg: #3d6043;
+  --color-attention-fg: #a87d2a;
+  --color-attention-muted: rgba(168,125,42,.35);
+  --color-attention-subtle: rgba(168,125,42,.1);
+  --color-danger-fg: #c8461e;
+  --color-primer-shadow-inset: none;
+  --color-scale-gray-7: #111c22;
+
+  /* Giscus-specific */
+  --color-social-reaction-bg-hover: #e8dfca;
+  --color-social-reaction-bg-reacted-hover: rgba(61,96,67,.15);
+
+  background: transparent !important;
+  color: #111c22;
+}
+
+/* ============ TYPOGRAPHY ============ */
+main,
+main .markdown-body,
+main .markdown-body *,
+main .gsc-comment-box,
+main .gsc-comment-content,
+main .gsc-comment-author-name,
+main .gsc-homepage-bg {
+  font-family: "Newsreader", "Noto Serif TC", Georgia, serif !important;
+}
+
+main .markdown-body {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  color: #111c22 !important;
+}
+
+main .markdown-body p { margin-bottom: 12px; }
+
+main .markdown-body code,
+main .markdown-body pre,
+main .gsc-comment-header-right,
+main .gsc-comments-count,
+main .gsc-reactions-count,
+main .gsc-comment-box-tabs,
+main time-ago,
+main relative-time {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  font-size: 11px !important;
+  letter-spacing: .08em;
+}
+
+main .gsc-comments-count {
+  text-transform: uppercase;
+  color: #5a5648;
+}
+
+/* ============ COMMENT CARDS ============ */
+main .gsc-comment,
+main .gsc-comment-box {
+  border: 1px dashed rgba(17,28,34,.28) !important;
+  border-radius: 0 !important;
+  background: rgba(232,223,202,.2) !important;
+  box-shadow: none !important;
+}
+
+main .gsc-comment-header {
+  background: transparent !important;
+  border-bottom: 1px dashed rgba(17,28,34,.2) !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+main .gsc-comment-content {
+  background: transparent !important;
+}
+
+main .gsc-reply-box {
+  background: rgba(232,223,202,.3) !important;
+  border-top: 1px dashed rgba(17,28,34,.2) !important;
+  border-radius: 0 !important;
+}
+
+/* ============ BUTTONS ============ */
+main button,
+main .btn,
+main .btn-primary,
+main .gsc-comment-box-tabs button,
+main .gsc-comment-box-preview,
+main .gsc-comment-box-write {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 11px !important;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+main .btn-primary {
+  background: #3d6043 !important;
+  border: 1px solid #3d6043 !important;
+  color: #f3ede0 !important;
+}
+main .btn-primary:hover {
+  background: #111c22 !important;
+  border-color: #111c22 !important;
+}
+
+/* ============ TEXTAREA ============ */
+main .gsc-comment-box-textarea,
+main textarea {
+  background: #f3ede0 !important;
+  border: 1px solid rgba(17,28,34,.28) !important;
+  border-radius: 0 !important;
+  font-family: "Newsreader", "Noto Serif TC", serif !important;
+  font-size: 16px !important;
+  color: #111c22 !important;
+}
+
+main .gsc-comment-box-textarea:focus,
+main textarea:focus {
+  border-color: #3d6043 !important;
+  box-shadow: 0 0 0 1px #3d6043 !important;
+}
+
+/* ============ REACTIONS & LINKS ============ */
+main .gsc-reactions-menu,
+main .gsc-reactions-popover {
+  border: 1px solid rgba(17,28,34,.28) !important;
+  border-radius: 0 !important;
+  background: #f3ede0 !important;
+  box-shadow: 4px 4px 0 #3d6043 !important;
+}
+
+main a,
+main .markdown-body a {
+  color: #3d6043 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(61,96,67,.35);
+}
+main a:hover,
+main .markdown-body a:hover {
+  color: #111c22 !important;
+  border-bottom-color: #111c22;
+}
+
+/* ============ AVATAR ============ */
+main .gsc-comment-author-avatar,
+main img.avatar,
+main .avatar {
+  border-radius: 2px !important;
+  border: 1px solid rgba(17,28,34,.2) !important;
+}
+
+/* ============ LOADING / SIGN-IN BOX ============ */
+main .gsc-loading-image { opacity: .4; }
+main .gsc-homepage-bg {
+  background: transparent !important;
+}
+main .gsc-sign-in-box {
+  border: 1px dashed rgba(17,28,34,.28) !important;
+  border-radius: 0 !important;
+  background: rgba(232,223,202,.25) !important;
+}
+
+main * {
+  box-shadow: none !important;
+}

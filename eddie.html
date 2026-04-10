@@ -835,7 +835,6 @@
   <div class="subline">
     <span data-zh="第一卷 · <span class='issue'>2026 第四期</span>">VOL. I · <span class="issue">ISSUE Ⅳ / 2026</span></span>
     <span>✉ <a href="mailto:eddlai.be10@nycu.edu.tw">eddlai.be10@nycu.edu.tw</a></span>
-    <span>☎ 0983-088-254</span>
     <span>⌘ <a href="https://github.com/eddLai">github.com/eddLai</a></span>
     <span>in <a href="https://linkedin.com/in/YOUR-HANDLE">linkedin</a></span>
   </div>
@@ -879,18 +878,18 @@
         <div class="block-side">
           <span class="date" data-zh="2025年4月 — 至今">APR 2025 — PRESENT</span>
           <span class="tag accent">EXOPULSE</span>
-          <span class="tag" data-zh="10 人團隊">TEAM OF 10</span>
+          <span class="tag" data-zh="約 10 人 · 扁平 IC">~10 · FLAT IC</span>
           <span class="tag" data-zh="種子前">PRE-SEED</span>
         </div>
         <div class="block-body">
           <h3 data-zh="ExoPulse <em>— 閉環式 AI 外骨骼</em>">ExoPulse <em>— Closed-Loop AI Exoskeleton</em></h3>
-          <div class="role" data-zh="創辦人暨執行長 — 技術負責人，約 10 人團隊">Founder &amp; CEO — Technical Lead, team of ~10</div>
+          <div class="role" data-zh="創辦人暨執行長 — 技術負責人，橫跨約 10 人扁平跨領域團隊">Founder &amp; CEO — Technical Lead across a ~10-person cross-functional group</div>
           <p class="lede" data-zh="一套面向長者與前衰弱族群的閉環式 AI 醫療外骨骼，建構於數位分身模擬與深度強化學習控制之上。">
             A closed-loop AI medical exoskeleton for elders and pre-frail individuals,
             built on digital-twin simulation and deep reinforcement learning control.
           </p>
           <ul>
-            <li data-zh="帶領約 10 人跨領域團隊，橫跨韌體、ML、機構設計與臨床協調。全權掌管技術藍圖：D4PG 強化學習控制器、OpenSim + Hill-type 數位分身流程、Xilinx KV260 FPGA 與 Nordic IoT 嵌入式韌體、1 kHz 無線 EMG 擷取、以及機構原型。">Lead a cross-functional team of ~10 across firmware, ML, mechanical design, and clinical coordination. Own the technical roadmap end-to-end: D4PG reinforcement learning controller, OpenSim + Hill-type digital twin pipeline, embedded firmware on Xilinx KV260 FPGA and Nordic IoT, wireless 1 kHz EMG acquisition, and mechanical prototype.</li>
+            <li data-zh="擔任技術負責人，橫跨約 10 人扁平 IC 團隊，涵蓋韌體、ML、機構設計與臨床協調。全權掌管技術藍圖：D4PG 強化學習控制器、OpenSim + Hill-type 數位分身流程、Xilinx KV260 FPGA 與 Nordic IoT 嵌入式韌體、1 kHz 無線 EMG 擷取、以及機構原型。">Technical lead across a ~10-person cross-functional group spanning firmware, ML, mechanical design, and clinical coordination, operating as a flat IC-driven team. Own the technical roadmap end-to-end: D4PG reinforcement learning controller, OpenSim + Hill-type digital twin pipeline, embedded firmware on Xilinx KV260 FPGA and Nordic IoT, wireless 1 kHz EMG acquisition, and mechanical prototype.</li>
             <li data-zh="<b>進展：</b>與<b>三間醫院</b>建立臨床合作，進行試驗與驗證。"><b>Traction:</b> Active clinical collaborations with <b>three hospitals</b> for pilot testing and validation.</li>
             <li data-zh="於 <b>Pitch in New York</b> 向美國投資人簡報。<a href='https://YOUR-PITCH-VIDEO'>簡報影片</a> · <a href='https://YOUR-DECK'>簡報檔</a>">Pitched to US investors at <b>Pitch in New York</b>. <a href="https://YOUR-PITCH-VIDEO">Pitch Video</a> · <a href="https://YOUR-DECK">Deck</a></li>
             <li data-zh="<b>iCREATE-GSIC 全球競賽 第三名</b> — 台灣代表，由英國長公主親自頒獎。<a href='https://YOUR-VIDEO'>影片</a> · <a href='https://YOUR-PROPOSAL'>提案書</a>"><b>3rd Prize, iCREATE-GSIC Global Competition</b> — Taiwan representative, awarded by HRH the Princess Royal. <a href="https://YOUR-VIDEO">Video</a> · <a href="https://YOUR-PROPOSAL">Proposal</a></li>
@@ -1259,6 +1258,90 @@
 
   </div>
 
+  <!-- ============ OFFICE HOURS / Q&A ============ -->
+  <style>
+    .qa { margin-top: 90px; position: relative; z-index: 2; }
+    .qa .sec-head { margin-bottom: 32px; }
+    .qa-lede {
+      font-family: "Newsreader", "Noto Serif TC", serif;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 40px;
+      padding-left: 18px;
+      border-left: 2px solid var(--accent);
+    }
+    html[lang="zh-Hant"] .qa-lede { font-style: normal; font-size: 16px; line-height: 1.8; }
+    .qa-lede b { color: var(--ink); font-weight: 500; font-style: normal; }
+    .qa-mount { position: relative; min-height: 180px; }
+    .qa-loading {
+      font-family: "Newsreader", "Noto Serif TC", serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: .04em;
+      color: var(--muted);
+      padding: 28px 0;
+      border-top: 1px dashed var(--hair);
+      border-bottom: 1px dashed var(--hair);
+      text-align: center;
+    }
+    html[lang="zh-Hant"] .qa-loading { font-style: normal; letter-spacing: .15em; }
+    .qa-loading::before,
+    .qa-loading::after { content: "  ·  "; opacity: .5; }
+    .qa-mount.loaded .qa-loading { display: none; }
+    .qa-mount .giscus,
+    .qa-mount .giscus-frame { max-width: 100% !important; width: 100% !important; }
+    @media print { .qa { display: none !important; } }
+  </style>
+
+  <section class="qa" id="qa">
+    <div class="sec-head">
+      <div>
+        <span class="kicker" data-zh="附錄 · 辦公時間">Appendix · Office Hours</span>
+        <h2 data-zh="辦公 <em>時間</em>">Office <em>Hours</em></h2>
+      </div>
+      <div></div>
+      <div class="folio" data-zh="附錄 A<br>開放通信">APPENDIX · A<br>OPEN CORRESPONDENCE</div>
+    </div>
+
+    <p class="qa-lede" data-zh="投資人、臨床合作夥伴、同行研究者 — 在下方留下問題或想法。<b>訊息透過 GitHub Discussions 傳遞</b>，請備好你的 handle。">
+      Investors, clinical collaborators, fellow researchers &mdash; drop a question or a note below. <b>Letters are routed through GitHub Discussions.</b> Bring your handle.
+    </p>
+
+    <div class="qa-mount" id="qa-mount">
+      <div class="qa-loading" data-zh="正在載入通信">loading correspondence</div>
+      <script src="https://giscus.app/client.js"
+              data-repo="eddLai/open_resume"
+              data-repo-id="REPLACE_WITH_REPO_ID"
+              data-category="Q&A"
+              data-category-id="REPLACE_WITH_CATEGORY_ID"
+              data-mapping="specific"
+              data-term="eddie-dossier"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="https://eddlai.github.io/open_resume/giscus-eddie.css"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </section>
+
+  <script>
+    // Hide QA loading placeholder once Giscus posts its first resize message
+    window.addEventListener('message', (e) => {
+      if (e.origin === 'https://giscus.app' && e.data && e.data.giscus) {
+        document.getElementById('qa-mount')?.classList.add('loaded');
+      }
+    });
+    // Fallback: hide after 4s even if no message arrives
+    setTimeout(() => document.getElementById('qa-mount')?.classList.add('loaded'), 4000);
+  </script>
+
   <!-- ============ COLOPHON ============ -->
   <footer class="colophon">
     <h3 data-zh="歡迎洽談：<b>醫療科技投資人對話</b> <span style='color:var(--muted)'>(種子前 / 種子輪)</span>、<b>臨床合作夥伴</b>（復健與老年醫學領域）、以及 <b>BMI、機器人或醫療器材</b> 領域的全職工程職位。">
@@ -1270,7 +1353,6 @@
       <a href="mailto:eddlai.be10@nycu.edu.tw" data-zh="✉ 電子郵件">✉ EMAIL</a>
       <a href="https://github.com/eddLai">⌘ GITHUB</a>
       <a href="https://linkedin.com/in/YOUR-HANDLE">in LINKEDIN</a>
-      <a href="tel:+886983088254" data-zh="☎ +886 983-088-254">☎ +886 983-088-254</a>
     </div>
   </footer>
 

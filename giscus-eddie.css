@@ -1,0 +1,258 @@
+/* ============================================================
+   giscus-eddie.css — Editorial Paper Theme (Eddie dossier)
+   Matches: Fraunces + Newsreader + Noto Serif TC + JetBrains Mono
+   Palette: #f5efe3 paper · #0e1a2b ink · #c8461e accent
+   ============================================================ */
+
+main {
+  /* Syntax highlighting (rare in comments, but cohesive) */
+  --color-prettylights-syntax-comment: #5a5648;
+  --color-prettylights-syntax-constant: #c8461e;
+  --color-prettylights-syntax-entity: #b38a2e;
+  --color-prettylights-syntax-storage-modifier-import: #0e1a2b;
+  --color-prettylights-syntax-entity-tag: #3d6043;
+  --color-prettylights-syntax-keyword: #c8461e;
+  --color-prettylights-syntax-string: #3d6043;
+  --color-prettylights-syntax-variable: #b38a2e;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #c8461e;
+  --color-prettylights-syntax-invalid-illegal-text: #f5efe3;
+  --color-prettylights-syntax-invalid-illegal-bg: #c8461e;
+  --color-prettylights-syntax-carriage-return-text: #f5efe3;
+  --color-prettylights-syntax-carriage-return-bg: #c8461e;
+  --color-prettylights-syntax-string-regexp: #3d6043;
+  --color-prettylights-syntax-markup-list: #b38a2e;
+  --color-prettylights-syntax-markup-heading: #0e1a2b;
+  --color-prettylights-syntax-markup-italic: #1d2d44;
+  --color-prettylights-syntax-markup-bold: #0e1a2b;
+  --color-prettylights-syntax-markup-deleted-text: #c8461e;
+  --color-prettylights-syntax-markup-deleted-bg: rgba(200,70,30,.1);
+  --color-prettylights-syntax-markup-inserted-text: #3d6043;
+  --color-prettylights-syntax-markup-inserted-bg: rgba(61,96,67,.1);
+  --color-prettylights-syntax-markup-changed-text: #b38a2e;
+  --color-prettylights-syntax-markup-changed-bg: rgba(179,138,46,.1);
+  --color-prettylights-syntax-markup-ignored-text: #f5efe3;
+  --color-prettylights-syntax-markup-ignored-bg: #0e1a2b;
+  --color-prettylights-syntax-meta-diff-range: #b38a2e;
+  --color-prettylights-syntax-brackethighlighter-angle: #5a5648;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: rgba(14,26,43,.3);
+  --color-prettylights-syntax-constant-other-reference-link: #c8461e;
+
+  /* Buttons */
+  --color-btn-text: #0e1a2b;
+  --color-btn-bg: #ede5d2;
+  --color-btn-border: rgba(14,26,43,.28);
+  --color-btn-shadow: none;
+  --color-btn-inset-shadow: none;
+  --color-btn-hover-bg: #f5efe3;
+  --color-btn-hover-border: #0e1a2b;
+  --color-btn-active-bg: #e0d5b8;
+  --color-btn-active-border: #0e1a2b;
+  --color-btn-selected-bg: #ede5d2;
+  --color-btn-primary-text: #f5efe3;
+  --color-btn-primary-bg: #c8461e;
+  --color-btn-primary-border: #c8461e;
+  --color-btn-primary-shadow: none;
+  --color-btn-primary-inset-shadow: none;
+  --color-btn-primary-hover-bg: #0e1a2b;
+  --color-btn-primary-hover-border: #0e1a2b;
+  --color-btn-primary-selected-bg: #0e1a2b;
+  --color-btn-primary-selected-shadow: none;
+  --color-btn-primary-disabled-text: rgba(14,26,43,.4);
+  --color-btn-primary-disabled-bg: rgba(200,70,30,.3);
+  --color-btn-primary-disabled-border: transparent;
+
+  /* Action list & segmented control */
+  --color-action-list-item-default-hover-bg: #ede5d2;
+  --color-segmented-control-bg: #ede5d2;
+  --color-segmented-control-button-bg: #f5efe3;
+  --color-segmented-control-button-selected-border: #0e1a2b;
+
+  /* Foreground & background */
+  --color-fg-default: #0e1a2b;
+  --color-fg-muted: #5a5648;
+  --color-fg-subtle: #8a8574;
+  --color-fg-on-emphasis: #f5efe3;
+  --color-canvas-default: transparent;
+  --color-canvas-overlay: #f5efe3;
+  --color-canvas-inset: #ede5d2;
+  --color-canvas-subtle: rgba(237,229,210,.45);
+
+  /* Borders */
+  --color-border-default: rgba(14,26,43,.22);
+  --color-border-muted: rgba(14,26,43,.14);
+  --color-neutral-muted: rgba(14,26,43,.08);
+  --color-neutral-emphasis-plus: #0e1a2b;
+
+  /* Accent */
+  --color-accent-fg: #c8461e;
+  --color-accent-emphasis: #c8461e;
+  --color-accent-muted: rgba(200,70,30,.35);
+  --color-accent-subtle: rgba(200,70,30,.1);
+
+  /* Success / attention / danger */
+  --color-success-fg: #3d6043;
+  --color-attention-fg: #b38a2e;
+  --color-attention-muted: rgba(179,138,46,.35);
+  --color-attention-subtle: rgba(179,138,46,.1);
+  --color-danger-fg: #c8461e;
+  --color-primer-shadow-inset: none;
+  --color-scale-gray-7: #0e1a2b;
+
+  /* Giscus-specific */
+  --color-social-reaction-bg-hover: #ede5d2;
+  --color-social-reaction-bg-reacted-hover: rgba(200,70,30,.15);
+
+  /* Page background */
+  background: transparent !important;
+  color: #0e1a2b;
+}
+
+/* ============ TYPOGRAPHY ============ */
+main,
+main .markdown-body,
+main .markdown-body *,
+main .gsc-comment-box,
+main .gsc-comment-content,
+main .gsc-comment-author-name,
+main .gsc-homepage-bg {
+  font-family: "Newsreader", "Noto Serif TC", Georgia, serif !important;
+}
+
+main .markdown-body {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  color: #0e1a2b !important;
+}
+
+main .markdown-body p { margin-bottom: 12px; }
+
+main .markdown-body code,
+main .markdown-body pre,
+main .gsc-comment-header-right,
+main .gsc-comments-count,
+main .gsc-reactions-count,
+main .gsc-comment-box-tabs,
+main time-ago,
+main relative-time {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  font-size: 11px !important;
+  letter-spacing: .08em;
+}
+
+main .gsc-comments-count {
+  text-transform: uppercase;
+  color: #5a5648;
+}
+
+/* ============ COMMENT CARDS — sharp-edged, dashed borders ============ */
+main .gsc-comment,
+main .gsc-comment-box {
+  border: 1px dashed rgba(14,26,43,.28) !important;
+  border-radius: 0 !important;
+  background: rgba(237,229,210,.2) !important;
+  box-shadow: none !important;
+}
+
+main .gsc-comment-header {
+  background: transparent !important;
+  border-bottom: 1px dashed rgba(14,26,43,.2) !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+main .gsc-comment-content {
+  background: transparent !important;
+}
+
+main .gsc-reply-box {
+  background: rgba(237,229,210,.3) !important;
+  border-top: 1px dashed rgba(14,26,43,.2) !important;
+  border-radius: 0 !important;
+}
+
+/* ============ BUTTONS — flat, squared, dossier-grade ============ */
+main button,
+main .btn,
+main .btn-primary,
+main .gsc-comment-box-tabs button,
+main .gsc-comment-box-preview,
+main .gsc-comment-box-write {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 11px !important;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+main .btn-primary {
+  background: #c8461e !important;
+  border: 1px solid #c8461e !important;
+  color: #f5efe3 !important;
+}
+main .btn-primary:hover {
+  background: #0e1a2b !important;
+  border-color: #0e1a2b !important;
+}
+
+/* ============ TEXTAREA ============ */
+main .gsc-comment-box-textarea,
+main textarea {
+  background: #f5efe3 !important;
+  border: 1px solid rgba(14,26,43,.28) !important;
+  border-radius: 0 !important;
+  font-family: "Newsreader", "Noto Serif TC", serif !important;
+  font-size: 16px !important;
+  color: #0e1a2b !important;
+}
+
+main .gsc-comment-box-textarea:focus,
+main textarea:focus {
+  border-color: #c8461e !important;
+  box-shadow: 0 0 0 1px #c8461e !important;
+}
+
+/* ============ REACTIONS & LINKS ============ */
+main .gsc-reactions-menu,
+main .gsc-reactions-popover {
+  border: 1px solid rgba(14,26,43,.28) !important;
+  border-radius: 0 !important;
+  background: #f5efe3 !important;
+  box-shadow: 4px 4px 0 #c8461e !important;
+}
+
+main a,
+main .markdown-body a {
+  color: #c8461e !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(200,70,30,.35);
+}
+main a:hover,
+main .markdown-body a:hover {
+  color: #0e1a2b !important;
+  border-bottom-color: #0e1a2b;
+}
+
+/* ============ AVATAR — soften the circular chrome ============ */
+main .gsc-comment-author-avatar,
+main img.avatar,
+main .avatar {
+  border-radius: 2px !important;
+  border: 1px solid rgba(14,26,43,.2) !important;
+}
+
+/* ============ LOADING / SIGN-IN BOX ============ */
+main .gsc-loading-image { opacity: .4; }
+main .gsc-homepage-bg {
+  background: transparent !important;
+}
+main .gsc-sign-in-box {
+  border: 1px dashed rgba(14,26,43,.28) !important;
+  border-radius: 0 !important;
+  background: rgba(237,229,210,.25) !important;
+}
+
+/* Remove GitHub's subtle box shadows across the board */
+main * {
+  box-shadow: none !important;
+}
