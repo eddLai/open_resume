@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eddie Lai (賴宏達) — Research Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Newsreader:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e1a2b;
+    --ink-2: #1d2d44;
+    --paper: #f5efe3;
+    --paper-2: #ede5d2;
+    --rule: #0e1a2b;
+    --accent: #c8461e;
+    --accent-2: #b38a2e;
+    --muted: #5a5648;
+    --hair: rgba(14,26,43,.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); }
+  body {
+    font-family: "Newsreader", "Noto Serif TC", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    font-weight: 400;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  html[lang="zh-Hant"] body {
+    font-family: "Noto Serif TC", "Newsreader", Georgia, serif;
+    font-size: 16.5px;
+    line-height: 1.7;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(200,70,30,.05), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(14,26,43,.06), transparent 45%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.06  0 0 0 0 0.1 0 0 0 0 0.17  0 0 0 0.13 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+    opacity: .45;
+    z-index: 1;
+  }
+
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--hair) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hair) 1px, transparent 1px);
+    background-size: 96px 96px;
+    opacity: .35;
+    z-index: 0;
+  }
+
+  .shell {
+    position: relative;
+    z-index: 2;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 48px 56px 120px;
+  }
+
+  /* ============ BACK LINK ============ */
+  .back-link {
+    position: fixed;
+    top: 22px;
+    left: 24px;
+    z-index: 50;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 9px 14px 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .25s ease;
+  }
+  .back-link:hover { background: var(--ink); color: var(--paper); }
+  html[lang="zh-Hant"] .back-link {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+  }
+  @media print { .back-link { display: none; } }
+
+  /* ============ LANG TOGGLE ============ */
+  .lang-toggle {
+    position: fixed;
+    top: 22px;
+    right: 24px;
+    z-index: 50;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 10px 16px 11px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--accent);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .lang-toggle:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--accent);
+  }
+  .lang-toggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--accent);
+  }
+  .lang-toggle .curr { color: var(--accent); }
+
+  /* ============ MASTHEAD ============ */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 24px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .masthead::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -6px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .mast-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  html[lang="zh-Hant"] .mast-meta {
+    font-family: "Noto Serif TC", monospace;
+    letter-spacing: .08em;
+    font-size: 11px;
+  }
+  .mast-meta.right { text-align: right; }
+  .mast-meta .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 6px;
+    transform: translateY(-1px);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: .3; }
+  }
+
+  .wordmark {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-weight: 300;
+    font-size: clamp(54px, 8vw, 110px);
+    line-height: .9;
+    letter-spacing: -.035em;
+    text-align: center;
+    white-space: nowrap;
+  }
+  html[lang="zh-Hant"] .wordmark {
+    font-family: "Noto Serif TC", "Fraunces", serif;
+    font-weight: 300;
+    letter-spacing: .04em;
+  }
+  .wordmark em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  html[lang="zh-Hant"] .wordmark em {
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .subline {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  html[lang="zh-Hant"] .subline {
+    font-family: "Noto Serif TC", monospace;
+    letter-spacing: .04em;
+  }
+  .subline .issue { color: var(--accent); font-weight: 500; }
+
+  /* ============ TAGLINE ============ */
+  .tagline {
+    margin: 46px 0 42px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .tagline .num {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-size: 86px;
+    line-height: .8;
+    color: var(--accent);
+    font-style: italic;
+  }
+  .tagline p {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.28;
+    letter-spacing: -.01em;
+    max-width: 820px;
+  }
+  html[lang="zh-Hant"] .tagline p {
+    font-family: "Noto Serif TC", "Fraunces", serif;
+    line-height: 1.55;
+    font-weight: 400;
+  }
+  .tagline p b {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--accent);
+  }
+  html[lang="zh-Hant"] .tagline p b { font-style: normal; }
+  .tagline p .thin { color: var(--muted); }
+
+  /* ============ TABS ============ */
+  .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    padding: 14px 0 0;
+    margin: 0 -56px 36px;
+    padding-left: 56px;
+    padding-right: 56px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    box-shadow: 0 10px 24px -24px rgba(14,26,43,.5);
+  }
+  .tabs::before {
+    content: "§ DOSSIER INDEX";
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    letter-spacing: .22em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  html[lang="zh-Hant"] .tabs::before {
+    content: "§ 內容索引";
+    font-family: "Noto Serif TC", monospace;
+    font-size: 11px;
+    letter-spacing: .2em;
+  }
+  .tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    list-style: none;
+    position: relative;
+  }
+  .tab-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--ink-2);
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -.005em;
+    padding: 14px 20px 16px;
+    cursor: pointer;
+    position: relative;
+    transition: color .35s ease, transform .35s ease;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  html[lang="zh-Hant"] .tab-btn {
+    font-family: "Noto Serif TC", serif;
+    letter-spacing: .05em;
+  }
+  .tab-btn .idx {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .1em;
+  }
+  .tab-btn:hover { color: var(--accent); }
+  .tab-btn::after {
+    content: "";
+    position: absolute;
+    left: 18px; right: 18px; bottom: -2px;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .45s cubic-bezier(.7,.1,.2,1);
+  }
+  .tab-btn.active {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 600;
+  }
+  html[lang="zh-Hant"] .tab-btn.active { font-style: normal; font-weight: 700; }
+  .tab-btn.active .idx { color: var(--accent); }
+  .tab-btn.active::after { transform: scaleX(1); }
+
+  /* ============ PANELS ============ */
+  .panels { position: relative; }
+  .panel {
+    display: none;
+    animation: rise .7s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .panel.active { display: block; }
+  @keyframes rise {
+    0%   { opacity: 0; transform: translateY(18px); filter: blur(4px); }
+    100% { opacity: 1; transform: none; filter: none; }
+  }
+  .panel > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .panel > *:nth-child(1) { animation-delay: .05s; }
+  .panel > *:nth-child(2) { animation-delay: .15s; }
+  .panel > *:nth-child(3) { animation-delay: .25s; }
+  .panel > *:nth-child(4) { animation-delay: .35s; }
+  .panel > *:nth-child(5) { animation-delay: .45s; }
+  .panel > *:nth-child(6) { animation-delay: .55s; }
+
+  .sec-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    gap: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sec-head .kicker {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  html[lang="zh-Hant"] .sec-head .kicker {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .18em;
+  }
+  .sec-head h2 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: .95;
+    letter-spacing: -.02em;
+  }
+  html[lang="zh-Hant"] .sec-head h2 {
+    font-family: "Noto Serif TC", "Fraunces", serif;
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+  .sec-head h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  html[lang="zh-Hant"] .sec-head h2 em { font-style: normal; font-weight: 600; }
+  .sec-head .folio {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .15em;
+    text-align: right;
+    line-height: 1.6;
+  }
+  html[lang="zh-Hant"] .sec-head .folio {
+    font-family: "Noto Serif TC", monospace;
+    letter-spacing: .08em;
+  }
+
+  .block {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 36px;
+    padding: 24px 0 28px;
+    border-bottom: 1px dashed var(--hair);
+  }
+  .block:last-child { border-bottom: none; }
+  .block-side {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  html[lang="zh-Hant"] .block-side {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .06em;
+  }
+  .block-side .date {
+    display: block;
+    color: var(--ink);
+    font-size: 11px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--hair);
+  }
+  html[lang="zh-Hant"] .block-side .date { font-size: 13px; }
+  .block-side .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    background: var(--ink);
+    color: var(--paper);
+    margin: 2px 2px 2px 0;
+    font-size: 9px;
+  }
+  html[lang="zh-Hant"] .block-side .tag { font-size: 11px; padding: 2px 8px; }
+  .block-side .tag.accent { background: var(--accent); }
+
+  .block-body h3 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+    margin-bottom: 4px;
+  }
+  html[lang="zh-Hant"] .block-body h3 {
+    font-family: "Noto Serif TC", serif;
+    letter-spacing: .02em;
+  }
+  .block-body h3 em { font-style: italic; color: var(--accent); }
+  html[lang="zh-Hant"] .block-body h3 em { font-style: normal; }
+  .block-body .role {
+    font-family: "Newsreader", "Noto Serif TC", serif;
+    font-style: italic;
+    color: var(--ink-2);
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+  html[lang="zh-Hant"] .block-body .role { font-style: normal; font-size: 15px; }
+  .block-body .lede {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
+  }
+  html[lang="zh-Hant"] .block-body .lede {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .block-body ul { list-style: none; padding: 0; }
+  .block-body li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 9px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  html[lang="zh-Hant"] .block-body li { font-size: 15.5px; line-height: 1.75; }
+  .block-body li::before {
+    content: "▸";
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--accent);
+    font-size: 13px;
+  }
+  .block-body li b { color: var(--ink); font-weight: 600; }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    transition: all .25s ease;
+  }
+  a:hover {
+    color: var(--accent);
+    background: rgba(200,70,30,.08);
+  }
+
+  .sub-role {
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px dotted var(--hair);
+  }
+  .sub-role:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .sub-role h4 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  html[lang="zh-Hant"] .sub-role h4 {
+    font-family: "Noto Serif TC", serif;
+    font-style: normal;
+    font-size: 17px;
+  }
+  .sub-role h4::before {
+    content: "❖ ";
+    color: var(--accent-2);
+    font-style: normal;
+  }
+
+  /* ========= SKILLS ========= */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    margin-top: 8px;
+  }
+  .skill-card {
+    background: var(--paper);
+    padding: 22px 24px 26px;
+    position: relative;
+  }
+  .skill-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 16px; right: 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .1em;
+  }
+  .skill-card h4 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  html[lang="zh-Hant"] .skill-card h4 {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .14em;
+  }
+  .skill-card p {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  html[lang="zh-Hant"] .skill-card p {
+    font-family: "Noto Serif TC", serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .skill-card p em { font-style: italic; color: var(--ink-2); }
+  html[lang="zh-Hant"] .skill-card p em { font-style: normal; color: var(--muted); }
+
+  /* ========= AWARDS ========= */
+  .award-list { list-style: none; padding: 0; }
+  .award-list li {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--hair);
+    align-items: baseline;
+  }
+  .award-list li:last-child { border-bottom: none; }
+  .award-list .rank {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .award-list .body h4 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  html[lang="zh-Hant"] .award-list .body h4 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 17px;
+  }
+  .award-list .body p {
+    font-size: 15px;
+    color: var(--ink-2);
+    font-style: italic;
+  }
+  html[lang="zh-Hant"] .award-list .body p { font-style: normal; font-size: 14.5px; }
+
+  /* ========= COLOPHON ========= */
+  .colophon {
+    margin-top: 80px;
+    padding: 36px 40px;
+    border: 1px solid var(--ink);
+    position: relative;
+    background:
+      repeating-linear-gradient(135deg, transparent 0 14px, rgba(14,26,43,.035) 14px 15px);
+  }
+  .colophon::before {
+    content: "✦ END OF DOSSIER ✦";
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--paper);
+    padding: 0 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    color: var(--accent);
+  }
+  html[lang="zh-Hant"] .colophon::before {
+    content: "✦ 全文完 ✦";
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .2em;
+  }
+  .colophon h3 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  html[lang="zh-Hant"] .colophon h3 {
+    font-family: "Noto Serif TC", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+  .colophon h3 b { font-style: normal; font-weight: 600; color: var(--accent); }
+  .colophon .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 26px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+  html[lang="zh-Hant"] .colophon .links {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 820px) {
+    .shell { padding: 32px 22px 80px; }
+    .tabs { margin: 0 -22px 28px; padding-left: 22px; padding-right: 22px; }
+    .masthead { grid-template-columns: 1fr; text-align: center; }
+    .mast-meta, .mast-meta.right { text-align: center; }
+    .wordmark { font-size: 48px; white-space: normal; }
+    .tagline { grid-template-columns: 1fr; gap: 10px; }
+    .tagline .num { font-size: 58px; }
+    .block { grid-template-columns: 1fr; gap: 14px; }
+    .block-side { display: flex; flex-wrap: wrap; gap: 8px; }
+    .block-side .date { border: none; padding: 0; margin: 0; }
+    .sec-head { grid-template-columns: 1fr; }
+    .sec-head .folio { text-align: left; }
+    .tab-btn { font-size: 15px; padding: 10px 12px 12px; }
+    .lang-toggle { top: 14px; right: 14px; padding: 8px 12px; font-size: 10px; }
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    @page { size: A4; margin: 14mm 14mm; }
+    body { background: #fff; font-size: 10pt; color: #000; }
+    body::before, body::after { display: none; }
+    .shell { padding: 0; max-width: none; }
+    .tabs, .lang-toggle { display: none; }
+    .panel { display: block !important; animation: none; page-break-inside: avoid; }
+    .panel > * { animation: none; }
+    .panel { margin-bottom: 14pt; }
+    a { color: #1a4d8f; border-bottom: none; }
+    .tagline .num, .award-list .rank { color: #1a4d8f; }
+    .sec-head .kicker, .skill-card h4 { color: #1a4d8f; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="index.html" data-zh="← 返回首頁">← INDEX</a>
+<button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+  <span class="curr">EN</span> / 中
+</button>
+
+<div class="shell">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="mast-meta" data-zh="創立 2021 · 陽明交大<br>生醫工程學系">
+      <span class="dot"></span>EST. 2021 · NYCU BME<br>
+      BIOMEDICAL ENGINEERING
+    </div>
+    <div class="wordmark" data-zh="賴<em>宏達</em>"><em>Eddie</em> Lai</div>
+    <div class="mast-meta right" data-zh="創辦人 · 研究者<br>英文名 EDDIE LAI">
+      FOUNDER · RESEARCHER<br>
+      A.K.A. HUNG-TA LAI (賴宏達)
+    </div>
+  </header>
+
+  <div class="subline">
+    <span data-zh="第一卷 · <span class='issue'>2026 第四期</span>">VOL. I · <span class="issue">ISSUE Ⅳ / 2026</span></span>
+    <span>✉ <a href="mailto:eddlai.be10@nycu.edu.tw">eddlai.be10@nycu.edu.tw</a></span>
+    <span>☎ 0983-088-254</span>
+    <span>⌘ <a href="https://github.com/eddLai">github.com/eddLai</a></span>
+    <span>in <a href="https://linkedin.com/in/YOUR-HANDLE">linkedin</a></span>
+  </div>
+
+  <!-- ============ TAGLINE ============ -->
+  <section class="tagline">
+    <div class="num">§</div>
+    <p data-zh="正在打造 <b>ExoPulse</b> — 面向長者行動力的閉環式 AI 醫療外骨骼。<span class='thin'>陽明交大 BMI / HMI 研究者，把研究從實驗室推進到臨床。</span>">
+      Building <b>ExoPulse</b> — closed-loop AI medical exoskeletons for elder mobility.
+      <span class="thin">A BMI / HMI researcher at NYCU, shipping research from lab to clinic.</span>
+    </p>
+  </section>
+
+  <!-- ============ TABS ============ -->
+  <nav class="tabs" aria-label="Dossier sections">
+    <ul class="tab-list" role="tablist">
+      <li><button class="tab-btn active" data-tab="founder"><span class="idx">01</span><span class="tab-label" data-zh="創業">Founder</span></button></li>
+      <li><button class="tab-btn" data-tab="research"><span class="idx">02</span><span class="tab-label" data-zh="研究">Research</span></button></li>
+      <li><button class="tab-btn" data-tab="skills"><span class="idx">03</span><span class="tab-label" data-zh="技能">Skills</span></button></li>
+      <li><button class="tab-btn" data-tab="education"><span class="idx">04</span><span class="tab-label" data-zh="學歷">Education</span></button></li>
+      <li><button class="tab-btn" data-tab="awards"><span class="idx">05</span><span class="tab-label" data-zh="獎項">Awards</span></button></li>
+      <li><button class="tab-btn" data-tab="teaching"><span class="idx">06</span><span class="tab-label" data-zh="教學">Teaching</span></button></li>
+    </ul>
+  </nav>
+
+  <!-- ============ PANELS ============ -->
+  <div class="panels">
+
+    <!-- ========= FOUNDER ========= -->
+    <section class="panel active" id="founder">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第一章 · 創業">Chapter 01 · Venture</span>
+          <h2 data-zh="創辦人 <em>經歷</em>">Founder <em>Experience</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 01 章 / 共 06 章<br>執行長 · 技術負責人">F–01 / 06<br>CEO · TECHNICAL LEAD</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="2025年4月 — 至今">APR 2025 — PRESENT</span>
+          <span class="tag accent">EXOPULSE</span>
+          <span class="tag" data-zh="10 人團隊">TEAM OF 10</span>
+          <span class="tag" data-zh="種子前">PRE-SEED</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="ExoPulse <em>— 閉環式 AI 外骨骼</em>">ExoPulse <em>— Closed-Loop AI Exoskeleton</em></h3>
+          <div class="role" data-zh="創辦人暨執行長 — 技術負責人，約 10 人團隊">Founder &amp; CEO — Technical Lead, team of ~10</div>
+          <p class="lede" data-zh="一套面向長者與前衰弱族群的閉環式 AI 醫療外骨骼，建構於數位分身模擬與深度強化學習控制之上。">
+            A closed-loop AI medical exoskeleton for elders and pre-frail individuals,
+            built on digital-twin simulation and deep reinforcement learning control.
+          </p>
+          <ul>
+            <li data-zh="帶領約 10 人跨領域團隊，橫跨韌體、ML、機構設計與臨床協調。全權掌管技術藍圖：D4PG 強化學習控制器、OpenSim + Hill-type 數位分身流程、Xilinx KV260 FPGA 與 Nordic IoT 嵌入式韌體、1 kHz 無線 EMG 擷取、以及機構原型。">Lead a cross-functional team of ~10 across firmware, ML, mechanical design, and clinical coordination. Own the technical roadmap end-to-end: D4PG reinforcement learning controller, OpenSim + Hill-type digital twin pipeline, embedded firmware on Xilinx KV260 FPGA and Nordic IoT, wireless 1 kHz EMG acquisition, and mechanical prototype.</li>
+            <li data-zh="<b>進展：</b>與<b>三間醫院</b>建立臨床合作，進行試驗與驗證。"><b>Traction:</b> Active clinical collaborations with <b>three hospitals</b> for pilot testing and validation.</li>
+            <li data-zh="於 <b>Pitch in New York</b> 向美國投資人簡報。<a href='https://YOUR-PITCH-VIDEO'>簡報影片</a> · <a href='https://YOUR-DECK'>簡報檔</a>">Pitched to US investors at <b>Pitch in New York</b>. <a href="https://YOUR-PITCH-VIDEO">Pitch Video</a> · <a href="https://YOUR-DECK">Deck</a></li>
+            <li data-zh="<b>iCREATE-GSIC 全球競賽 第三名</b> — 台灣代表，由英國長公主親自頒獎。<a href='https://YOUR-VIDEO'>影片</a> · <a href='https://YOUR-PROPOSAL'>提案書</a>"><b>3rd Prize, iCREATE-GSIC Global Competition</b> — Taiwan representative, awarded by HRH the Princess Royal. <a href="https://YOUR-VIDEO">Video</a> · <a href="https://YOUR-PROPOSAL">Proposal</a></li>
+            <li data-zh="登上<b>公視新聞</b>（2025 年 2 月 19 日），透過與台北榮民總醫院（TVGH）聯合記者會。<a href='https://YOUR-NEWS-LINK'>新聞連結</a>">Featured on <b>PTS National News</b> (Feb 19, 2025) via joint press conference with Taipei Veterans General Hospital (TVGH). <a href="https://YOUR-NEWS-LINK">News</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= RESEARCH ========= -->
+    <section class="panel" id="research">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第二章 · 實驗室">Chapter 02 · Laboratory</span>
+          <h2 data-zh="研究 <em>歷程</em>">Research <em>Portfolio</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 02 章 / 共 06 章<br>陽明交大 BME · 2021 至今">F–02 / 06<br>NYCU BME · 2021–PRESENT</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="2021 — 至今">2021 — PRESENT</span>
+          <span class="tag">HMI</span>
+          <span class="tag">BMI</span>
+          <span class="tag" data-zh="電腦視覺">CV</span>
+          <span class="tag" data-zh="穿戴">WEARABLES</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="陽明交通大學 <em>生醫工程學系</em>">NYCU Dept. of <em>Biomedical Engineering</em></h3>
+          <div class="role" data-zh="研究助理，同時參與四項研究計畫">Research Assistant across four concurrent projects</div>
+
+          <div class="sub-role">
+            <h4 data-zh="外骨骼動力輔助 (HMI) — 技術負責人">Exoskeleton Power Augmentation (HMI) — Tech Lead</h4>
+            <ul>
+              <li data-zh="在 Xilinx FPGA KV260 + KD240 與 Nordic IoT 上建構嵌入式控制架構（自 ESP32 遷移而來），實現即時閉環外骨骼控制。">Built embedded control stack on Xilinx FPGA KV260+KD240 and Nordic IoT (migrated from ESP32) for real-time closed-loop exoskeleton control.</li>
+              <li data-zh="實作 D4PG 分散式深度強化學習於人機互動；整合 OpenSim / SCONE 肌肉骨骼模擬與基於 EMG 的運動意圖預測。">Implemented D4PG distributed deep RL for human–machine interaction; integrated with OpenSim / SCONE musculoskeletal simulation and EMG-based motion-intent prediction.</li>
+              <li data-zh="<b>獨立打造</b>實驗室計畫之外的 1 kHz 無線 EMG 擷取系統，於 GCBME 發表第一作者論文。<a href='https://YOUR-ABSTRACT'>摘要</a> · <a href='https://YOUR-SLIDES'>投影片</a>"><b>Independently built</b> a wireless EMG acquisition system at 1 kHz sampling outside lab scope. First-author paper at GCBME. <a href="https://YOUR-ABSTRACT">Abstract</a> · <a href="https://YOUR-SLIDES">Slides</a></li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="無標記動作捕捉 — 技術負責人">Markerless Motion Capture — Tech Lead</h4>
+            <ul>
+              <li data-zh="建構 AI 3D 人體姿態估測流程；以 Vicon 為 ground truth 驗證精度。">Built AI-based 3D human pose estimation pipeline; validated against Vicon ground truth.</li>
+              <li data-zh="開發即時影像串流 Web UI 與一鍵 Docker 部署，已被實驗室研究者採用。">Shipped real-time video-streaming web UI and one-click Docker deployment adopted by lab researchers.</li>
+              <li data-zh="研究成果於 2025 年 2 月陽明交大 × 台北榮總聯合記者會公開展示。<a href='https://YOUR-PRESS-VIDEO'>記者會</a>">Work featured in NYCU × TVGH joint press conference, Feb 2025. <a href="https://YOUR-PRESS-VIDEO">Press Conference</a></li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="神經解碼 (BMI / BCI)">Neural Decoding (BMI / BCI)</h4>
+            <ul>
+              <li data-zh="進行囓齒類行為實驗以解碼神經訊號，使用 Temporal Convolutional Network (TCN) 做時間序列回歸。">Conducted rodent behavior experiments for neural signal decoding using Temporal Convolutional Networks (TCN) for time-series regression.</li>
+              <li data-zh="參與電極製作與植入手術；設計 3D 列印行為實驗裝置（滑軌、行為箱、飲水平台）。<a href='https://YOUR-RAIL'>滑軌</a> · <a href='https://YOUR-BOX'>行為箱</a>">Participated in electrode fabrication and implantation; designed 3D-printed behavioral apparatus (sliding rail, rat behavior box, water supply platform). <a href="https://YOUR-RAIL">Sliding Rail</a> · <a href="https://YOUR-BOX">Behavior Box</a></li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="生化感測穿戴裝置">Biochemical Wearable Sensor</h4>
+            <ul>
+              <li data-zh="整合 MCU 控制之 TI LMP91000 電化學前端；完成電路模擬與 PCB 佈局，應用於穿戴式即時健康監測。">Integrated MCU-controlled TI LMP91000 electrochemical AFE; performed circuit simulation and PCB layout for wearable real-time health monitoring.</li>
+              <li data-zh="<b>教育部創新創業競賽 全國第一名。</b><a href='https://YOUR-PITCH'>Pitch</a> · <a href='https://YOUR-DECK2'>簡報</a>"><b>1st Prize (National), MOE Innovation &amp; Entrepreneurship Competition.</b> <a href="https://YOUR-PITCH">Pitch</a> · <a href="https://YOUR-DECK2">Deck</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SKILLS ========= -->
+    <section class="panel" id="skills">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第三章 · 工具庫">Chapter 03 · Instrumentarium</span>
+          <h2 data-zh="技術 <em>能力</em>">Technical <em>Skills</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 03 章 / 共 06 章<br>技術棧 · 工具鏈">F–03 / 06<br>STACK · TOOLCHAIN</div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card" data-num="/01">
+          <h4 data-zh="核心研究">Core Research</h4>
+          <p data-zh="強化學習 <em>(D4PG)</em>、BMI / HMI、嵌入式 AI、數位分身">Reinforcement Learning <em>(D4PG)</em>, BMI / HMI, Embedded AI, Digital Twins</p>
+        </div>
+        <div class="skill-card" data-num="/02">
+          <h4 data-zh="硬體平台">Hardware Platforms</h4>
+          <p data-zh="Xilinx FPGA <em>(KV260 / KD240、Vivado / Vitis)</em>、Nordic、ESP32、MSP430、Jetson Nano、Raspberry Pi">Xilinx FPGA <em>(KV260 / KD240, Vivado / Vitis)</em>, Nordic, ESP32, MSP430, Jetson Nano, Raspberry Pi</p>
+        </div>
+        <div class="skill-card" data-num="/03">
+          <h4 data-zh="訊號與模擬">Signal &amp; Simulation</h4>
+          <p data-zh="EMG <em>(自製 1 kHz 設備)</em>、LFP、spike sorting、OpenSim、SCONE、Hill-type 肌肉模型">EMG <em>(custom 1 kHz rig)</em>, LFP, spike sorting, OpenSim, SCONE, Hill-type muscle models</p>
+        </div>
+        <div class="skill-card" data-num="/04">
+          <h4 data-zh="機器學習 / 電腦視覺">Machine Learning / CV</h4>
+          <p data-zh="PyTorch、TCN、Transformers、無標記 3D 姿態估測">PyTorch, TCN, Transformers, markerless 3D pose estimation</p>
+        </div>
+        <div class="skill-card" data-num="/05">
+          <h4 data-zh="軟體 / DevOps">Software &amp; DevOps</h4>
+          <p data-zh="C++、Python、JavaScript、Docker、Git、Slurm、ROS、X11">C++, Python, JavaScript, Docker, Git, Slurm, ROS, X11</p>
+        </div>
+        <div class="skill-card" data-num="/06">
+          <h4 data-zh="硬體 CAD">Hardware CAD</h4>
+          <p data-zh="KiCAD、AutoCAD、Shape3D、3D 列印、PCB 佈局">KiCAD, AutoCAD, Shape3D, 3D printing, PCB layout</p>
+        </div>
+        <div class="skill-card" data-num="/07">
+          <h4 data-zh="其他">Other</h4>
+          <p data-zh="VR <em>(Meta Quest 3)</em>、國科會計畫預算與 BOM 管理">VR <em>(Meta Quest 3)</em>, NSTC project budget &amp; BOM management</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= EDUCATION ========= -->
+    <section class="panel" id="education">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第四章 · 學術">Chapter 04 · Academia</span>
+          <h2 data-zh="學歷">Education</h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 04 章 / 共 06 章<br>學士 + 碩士一貫">F–04 / 06<br>INTEGRATED BS + MS</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date">2021 — 2026</span>
+          <span class="tag" data-zh="學士 + 碩士">BS + MS</span>
+          <span class="tag accent">4 + 1</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="國立陽明交通大學 <em>(NYCU)</em>">National Yang Ming Chiao Tung University <em>(NYCU)</em></h3>
+          <div class="role" data-zh="生醫工程 學士 + 碩士 — 五年一貫 4+1 學程（進行中）">BS + MS, Biomedical Engineering — Five-year Integrated 4+1 Program (in progress)</div>
+          <p class="lede" data-zh="五年一貫加速學程，融合扎實的生醫工程基礎與神經工程、嵌入式 AI、復健機器人領域的深度專精。">
+            An accelerated five-year track blending rigorous biomedical fundamentals
+            with deep specialization in neural engineering, embedded AI, and rehabilitation robotics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= AWARDS ========= -->
+    <section class="panel" id="awards">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第五章 · 榮譽">Chapter 05 · Distinctions</span>
+          <h2 data-zh="精選 <em>獎項</em>">Selected <em>Awards</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 05 章 / 共 06 章<br>全國 · 國際">F–05 / 06<br>NATIONAL · INTERNATIONAL</div>
+      </div>
+
+      <ul class="award-list">
+        <li>
+          <div class="rank">※</div>
+          <div class="body">
+            <h4 data-zh="2024 國科會 大專學生研究計畫獎學金">2024 NSTC College Student Research Scholarship</h4>
+            <p data-zh="經由後頂葉皮質 – M2 路徑之姿勢與步態多模態神經解碼。<a href='https://YOUR-REPORT'>期末報告</a>">Multimodal neural decoding of posture and gait via the posterior parietal cortex – M2 pathway. <a href="https://YOUR-REPORT">Final Report</a></p>
+          </div>
+        </li>
+        <li>
+          <div class="rank">✦</div>
+          <div class="body">
+            <h4 data-zh="中國工程師學會 (CIE) 優秀論文獎">Outstanding Paper Award — Chinese Institute of Engineers (CIE)</h4>
+            <p data-zh="肯定於生醫工程研究之貢獻。">Recognized for contribution to biomedical engineering research.</p>
+          </div>
+        </li>
+        <li>
+          <div class="rank">2<sup style="font-size:14px">nd</sup></div>
+          <div class="body">
+            <h4 data-zh="NVIDIA AIoT 挑戰賽 第二名">NVIDIA AIoT Challenge</h4>
+            <p data-zh="Jetson Nano 邊緣 AI 電腦視覺應用。">Jetson Nano edge-AI computer vision application.</p>
+          </div>
+        </li>
+        <li>
+          <div class="rank">3<sup style="font-size:14px">rd</sup></div>
+          <div class="body">
+            <h4 data-zh="iCREATE-GSIC 全球競賽 第三名">iCREATE-GSIC Global Competition</h4>
+            <p data-zh="台灣代表，由英國長公主親自頒獎。">Taiwan representative, awarded by HRH the Princess Royal.</p>
+          </div>
+        </li>
+        <li>
+          <div class="rank">1<sup style="font-size:14px">st</sup></div>
+          <div class="body">
+            <h4 data-zh="教育部創新創業競賽 — 全國第一名">MOE Innovation &amp; Entrepreneurship Competition — National</h4>
+            <p data-zh="穿戴式生化感測器專案。">Wearable biochemical sensor project.</p>
+          </div>
+        </li>
+        <li>
+          <div class="rank">+</div>
+          <div class="body">
+            <h4 data-zh="其他榮譽">Additional Recognition</h4>
+            <p data-zh="旺宏科學獎 <em>(髖部外骨骼 + AR)</em>；Matlab 海報競賽 <em>(外骨骼閉環控制之強化學習)</em>。">Macronix Competition <em>(Hip Exoskeleton + AR)</em>; Matlab Poster Competition <em>(RL for exoskeleton closed-loop control)</em>.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========= TEACHING ========= -->
+    <section class="panel" id="teaching">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第六章 · 服務">Chapter 06 · Service</span>
+          <h2 data-zh="教學與 <em>領導</em>">Teaching &amp; <em>Leadership</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 06 章 / 共 06 章<br>教學 · 領導 · 代表">F–06 / 06<br>TEACH · LEAD · REPRESENT</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="進行中">ONGOING</span>
+          <span class="tag" data-zh="助教">TA</span>
+          <span class="tag" data-zh="導師">MENTOR</span>
+          <span class="tag" data-zh="參展">EXHIBITOR</span>
+        </div>
+        <div class="block-body">
+          <ul>
+            <li data-zh="<b>進階助教暨課程設計者</b>，陽明交大 BME 嵌入式系統與 C++ 程式設計。指導學生 MSP430；設計實驗課程。<a href='https://YOUR-PORTFOLIO'>教學作品集</a>"><b>Advanced Teaching Assistant &amp; Course Designer</b>, Embedded Systems and C++ Programming, NYCU BME. Mentored students on MSP430; designed lab sessions. <a href="https://YOUR-PORTFOLIO">Teaching Portfolio</a></li>
+            <li data-zh="<b>初審面試官</b>，台灣優華語計畫 (TEEP) — 篩選外骨骼合作之交換學生候選人。"><b>Preliminary Interviewer</b>, Taiwan Experience Education Program (TEEP) — screened exchange student candidates for exoskeleton collaboration.</li>
+            <li data-zh="<b>參展者</b>，國際醫療科技展（台北南港）— 與資策會 (III) 共同參展。"><b>Exhibitor</b>, International Medical Technology Exhibition (Nangang, Taipei) — co-exhibited with the Institute for Information Industry (III).</li>
+            <li data-zh="<b>活動負責人</b>，陽明交大 BME 迎新營與 BME 之夜。"><b>Event Lead</b>, BME Orientation Camp and BME Night, NYCU.</li>
+            <li data-zh="<b>運動員</b>，陽明交大軟式網球校隊（全國大專運動會 男子單打）；台北－高雄一日單車挑戰。"><b>Athlete</b>, NYCU varsity Soft Tennis (National University Games, Men's Singles); Taipei–Kaohsiung one-day cycling challenge.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ COLOPHON ============ -->
+  <footer class="colophon">
+    <h3 data-zh="歡迎洽談：<b>醫療科技投資人對話</b> <span style='color:var(--muted)'>(種子前 / 種子輪)</span>、<b>臨床合作夥伴</b>（復健與老年醫學領域）、以及 <b>BMI、機器人或醫療器材</b> 領域的全職工程職位。">
+      Open to <b>healthtech investor conversations</b> <span style="color:var(--muted)">(pre-seed / seed)</span>,
+      <b>clinical collaborators</b> in rehab &amp; geriatrics,
+      and <b>full-time engineering roles</b> in BMI, robotics, or medical devices.
+    </h3>
+    <div class="links">
+      <a href="mailto:eddlai.be10@nycu.edu.tw" data-zh="✉ 電子郵件">✉ EMAIL</a>
+      <a href="https://github.com/eddLai">⌘ GITHUB</a>
+      <a href="https://linkedin.com/in/YOUR-HANDLE">in LINKEDIN</a>
+      <a href="tel:+886983088254" data-zh="☎ +886 983-088-254">☎ +886 983-088-254</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ========== TAB NAV ==========
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.tab;
+      tabs.forEach(t => t.classList.toggle('active', t === btn));
+      panels.forEach(p => {
+        const isActive = p.id === id;
+        p.classList.toggle('active', isActive);
+        if (isActive) {
+          p.style.animation = 'none';
+          void p.offsetWidth;
+          p.style.animation = '';
+          p.querySelectorAll(':scope > *').forEach(el => {
+            el.style.animation = 'none';
+            void el.offsetWidth;
+            el.style.animation = '';
+          });
+        }
+      });
+      document.querySelector('.tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.matches('input, textarea')) return;
+    const active = document.querySelector('.tab-btn.active');
+    const list = Array.from(tabs);
+    const i = list.indexOf(active);
+    if (e.key === 'ArrowRight') list[(i + 1) % list.length].click();
+    if (e.key === 'ArrowLeft')  list[(i - 1 + list.length) % list.length].click();
+  });
+
+  // ========== LANGUAGE TOGGLE ==========
+  const translatable = document.querySelectorAll('[data-zh]');
+  // cache original English HTML on load
+  translatable.forEach(el => { el.dataset.en = el.innerHTML; });
+
+  const toggle = document.getElementById('langToggle');
+
+  function setLang(lang) {
+    translatable.forEach(el => {
+      el.innerHTML = el.dataset[lang === 'zh' ? 'zh' : 'en'];
+    });
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+    toggle.innerHTML = lang === 'zh'
+      ? 'EN / <span class="curr">中</span>'
+      : '<span class="curr">EN</span> / 中';
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+
+  toggle.addEventListener('click', () => {
+    const curr = document.documentElement.lang === 'zh-Hant' ? 'zh' : 'en';
+    setLang(curr === 'en' ? 'zh' : 'en');
+  });
+
+  // restore saved preference
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'zh') setLang('zh');
+  } catch(e) {}
+</script>
+</body>
+</html>

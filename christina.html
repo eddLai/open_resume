@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christina Tsai (蔡汶伶) — Clinical Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,600;9..144,0,900;9..144,1,400&family=Newsreader:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111c22;
+    --ink-2: #1f3139;
+    --paper: #f3ede0;
+    --paper-2: #e8dfca;
+    --accent: #3d6043;       /* deep forest — Christina's signature */
+    --accent-2: #a87d2a;     /* brass */
+    --muted: #5a5648;
+    --hair: rgba(17,28,34,.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); }
+  body {
+    font-family: "Newsreader", "Noto Serif TC", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    font-weight: 400;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  html[lang="zh-Hant"] body {
+    font-family: "Noto Serif TC", "Newsreader", Georgia, serif;
+    font-size: 16.5px;
+    line-height: 1.7;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(61,96,67,.07), transparent 42%),
+      radial-gradient(circle at 88% 82%, rgba(17,28,34,.07), transparent 48%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0.06  0 0 0 0 0.12 0 0 0 0 0.09  0 0 0 0.13 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+    opacity: .5;
+    z-index: 1;
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--hair) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hair) 1px, transparent 1px);
+    background-size: 96px 96px;
+    opacity: .32;
+    z-index: 0;
+  }
+
+  .shell {
+    position: relative;
+    z-index: 2;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 48px 56px 120px;
+  }
+
+  /* ============ TOP BAR (back + lang) ============ */
+  .top-bar {
+    position: fixed;
+    top: 22px;
+    left: 0; right: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    pointer-events: none;
+  }
+  .top-bar > * { pointer-events: auto; }
+  .back-link {
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 9px 14px 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .25s ease;
+  }
+  .back-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  html[lang="zh-Hant"] .back-link {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+  }
+  .lang-toggle {
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 10px 16px 11px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--accent);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .lang-toggle:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--accent); }
+  .lang-toggle:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--accent); }
+  .lang-toggle .curr { color: var(--accent-2); }
+
+  /* ============ MASTHEAD ============ */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 24px;
+    padding-top: 30px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .masthead::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -6px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .mast-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  html[lang="zh-Hant"] .mast-meta {
+    font-family: "Noto Serif TC", monospace;
+    letter-spacing: .08em;
+    font-size: 11px;
+  }
+  .mast-meta.right { text-align: right; }
+  .mast-meta .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 6px;
+    transform: translateY(-1px);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  .wordmark {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    font-weight: 300;
+    font-size: clamp(52px, 7.6vw, 104px);
+    line-height: .9;
+    letter-spacing: -.03em;
+    text-align: center;
+    white-space: nowrap;
+  }
+  html[lang="zh-Hant"] .wordmark {
+    font-family: "Noto Serif TC", "Fraunces", serif;
+    font-weight: 300;
+    letter-spacing: .04em;
+  }
+  .wordmark em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  html[lang="zh-Hant"] .wordmark em { font-style: normal; font-weight: 600; }
+
+  .subline {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  html[lang="zh-Hant"] .subline {
+    font-family: "Noto Serif TC", monospace;
+    letter-spacing: .04em;
+  }
+  .subline .issue { color: var(--accent); font-weight: 500; }
+
+  /* ============ TAGLINE ============ */
+  .tagline {
+    margin: 46px 0 42px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .tagline .num {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-size: 86px;
+    line-height: .8;
+    color: var(--accent);
+    font-style: italic;
+  }
+  .tagline p {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(22px, 2.5vw, 31px);
+    line-height: 1.3;
+    letter-spacing: -.01em;
+    max-width: 820px;
+  }
+  html[lang="zh-Hant"] .tagline p {
+    font-family: "Noto Serif TC", "Fraunces", serif;
+    line-height: 1.55;
+    font-weight: 400;
+  }
+  .tagline p b { font-weight: 600; font-style: italic; color: var(--accent); }
+  html[lang="zh-Hant"] .tagline p b { font-style: normal; }
+  .tagline p .thin { color: var(--muted); }
+
+  /* ============ TABS ============ */
+  .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    padding: 14px 0 0;
+    margin: 0 -56px 36px;
+    padding-left: 56px;
+    padding-right: 56px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    box-shadow: 0 10px 24px -24px rgba(17,28,34,.5);
+  }
+  .tabs::before {
+    content: "§ DOSSIER INDEX";
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    letter-spacing: .22em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  html[lang="zh-Hant"] .tabs::before {
+    content: "§ 內容索引";
+    font-family: "Noto Serif TC", monospace;
+    font-size: 11px;
+    letter-spacing: .2em;
+  }
+  .tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    list-style: none;
+    position: relative;
+  }
+  .tab-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--ink-2);
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 14px 20px 16px;
+    cursor: pointer;
+    position: relative;
+    transition: color .35s ease;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  html[lang="zh-Hant"] .tab-btn {
+    font-family: "Noto Serif TC", serif;
+    letter-spacing: .05em;
+  }
+  .tab-btn .idx {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .1em;
+  }
+  .tab-btn:hover { color: var(--accent); }
+  .tab-btn::after {
+    content: "";
+    position: absolute;
+    left: 18px; right: 18px; bottom: -2px;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .45s cubic-bezier(.7,.1,.2,1);
+  }
+  .tab-btn.active { color: var(--accent); font-style: italic; font-weight: 600; }
+  html[lang="zh-Hant"] .tab-btn.active { font-style: normal; font-weight: 700; }
+  .tab-btn.active .idx { color: var(--accent); }
+  .tab-btn.active::after { transform: scaleX(1); }
+
+  /* ============ PANELS ============ */
+  .panels { position: relative; }
+  .panel { display: none; animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .panel.active { display: block; }
+  @keyframes rise {
+    0% { opacity: 0; transform: translateY(18px); filter: blur(4px); }
+    100% { opacity: 1; transform: none; filter: none; }
+  }
+  .panel > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .panel > *:nth-child(1) { animation-delay: .05s; }
+  .panel > *:nth-child(2) { animation-delay: .15s; }
+  .panel > *:nth-child(3) { animation-delay: .25s; }
+  .panel > *:nth-child(4) { animation-delay: .35s; }
+  .panel > *:nth-child(5) { animation-delay: .45s; }
+
+  .sec-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    gap: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sec-head .kicker {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  html[lang="zh-Hant"] .sec-head .kicker {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .18em;
+  }
+  .sec-head h2 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: .95;
+    letter-spacing: -.02em;
+  }
+  html[lang="zh-Hant"] .sec-head h2 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+  .sec-head h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  html[lang="zh-Hant"] .sec-head h2 em { font-style: normal; font-weight: 600; }
+  .sec-head .folio {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .15em;
+    text-align: right;
+    line-height: 1.6;
+  }
+  html[lang="zh-Hant"] .sec-head .folio {
+    font-family: "Noto Serif TC", monospace;
+    letter-spacing: .08em;
+  }
+
+  .block {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 36px;
+    padding: 24px 0 28px;
+    border-bottom: 1px dashed var(--hair);
+  }
+  .block:last-child { border-bottom: none; }
+  .block-side {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  html[lang="zh-Hant"] .block-side {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .06em;
+  }
+  .block-side .date {
+    display: block;
+    color: var(--ink);
+    font-size: 11px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--hair);
+  }
+  html[lang="zh-Hant"] .block-side .date { font-size: 13px; }
+  .block-side .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    background: var(--ink);
+    color: var(--paper);
+    margin: 2px 2px 2px 0;
+    font-size: 9px;
+  }
+  html[lang="zh-Hant"] .block-side .tag { font-size: 11px; padding: 2px 8px; }
+  .block-side .tag.accent { background: var(--accent); }
+
+  .block-body h3 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.18;
+    letter-spacing: -.01em;
+    margin-bottom: 4px;
+  }
+  html[lang="zh-Hant"] .block-body h3 {
+    font-family: "Noto Serif TC", serif;
+    letter-spacing: .02em;
+  }
+  .block-body h3 em { font-style: italic; color: var(--accent); }
+  html[lang="zh-Hant"] .block-body h3 em { font-style: normal; }
+  .block-body .role {
+    font-family: "Newsreader", "Noto Serif TC", serif;
+    font-style: italic;
+    color: var(--ink-2);
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+  html[lang="zh-Hant"] .block-body .role { font-style: normal; font-size: 15px; }
+  .block-body .lede {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
+  }
+  html[lang="zh-Hant"] .block-body .lede {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .block-body ul { list-style: none; padding: 0; }
+  .block-body li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 9px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  html[lang="zh-Hant"] .block-body li { font-size: 15.5px; line-height: 1.75; }
+  .block-body li::before {
+    content: "▸";
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--accent);
+    font-size: 13px;
+  }
+  .block-body li b { color: var(--ink); font-weight: 600; }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    transition: all .25s ease;
+  }
+  a:hover { color: var(--accent); background: rgba(61,96,67,.1); }
+
+  .sub-role {
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px dotted var(--hair);
+  }
+  .sub-role:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .sub-role h4 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  html[lang="zh-Hant"] .sub-role h4 {
+    font-family: "Noto Serif TC", serif;
+    font-style: normal;
+    font-size: 17px;
+  }
+  .sub-role h4::before {
+    content: "❋ ";
+    color: var(--accent-2);
+    font-style: normal;
+  }
+
+  /* SKILLS GRID */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    margin: 8px 0 40px;
+  }
+  .skill-card {
+    background: var(--paper);
+    padding: 22px 24px 26px;
+    position: relative;
+  }
+  .skill-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 16px; right: 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .1em;
+  }
+  .skill-card h4 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  html[lang="zh-Hant"] .skill-card h4 {
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .14em;
+  }
+  .skill-card p {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 16.5px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  html[lang="zh-Hant"] .skill-card p {
+    font-family: "Noto Serif TC", serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .skill-card p em { font-style: italic; color: var(--ink-2); }
+  html[lang="zh-Hant"] .skill-card p em { font-style: normal; color: var(--muted); }
+
+  /* CERT LIST */
+  .cert-list { list-style: none; padding: 0; margin-top: 8px; }
+  .cert-list li {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--hair);
+    align-items: baseline;
+  }
+  .cert-list li:last-child { border-bottom: none; }
+  .cert-list .glyph {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .cert-list .body h4 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  html[lang="zh-Hant"] .cert-list .body h4 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 16.5px;
+  }
+  .cert-list .body p {
+    font-size: 14.5px;
+    color: var(--ink-2);
+    font-style: italic;
+  }
+  html[lang="zh-Hant"] .cert-list .body p { font-style: normal; }
+  .cert-list .date {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .1em;
+  }
+
+  /* COLOPHON */
+  .colophon {
+    margin-top: 80px;
+    padding: 36px 40px;
+    border: 1px solid var(--ink);
+    position: relative;
+    background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(17,28,34,.035) 14px 15px);
+  }
+  .colophon::before {
+    content: "✦ END OF DOSSIER ✦";
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--paper);
+    padding: 0 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    color: var(--accent);
+  }
+  html[lang="zh-Hant"] .colophon::before {
+    content: "✦ 全文完 ✦";
+    font-family: "Noto Serif TC", monospace;
+    font-size: 12px;
+    letter-spacing: .2em;
+  }
+  .colophon h3 {
+    font-family: "Fraunces", "Noto Serif TC", serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  html[lang="zh-Hant"] .colophon h3 {
+    font-family: "Noto Serif TC", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .colophon h3 b { font-style: normal; font-weight: 600; color: var(--accent); }
+  .colophon .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 26px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+  html[lang="zh-Hant"] .colophon .links { font-family: "Noto Serif TC", monospace; font-size: 12px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 820px) {
+    .shell { padding: 70px 22px 80px; }
+    .tabs { margin: 0 -22px 28px; padding-left: 22px; padding-right: 22px; }
+    .masthead { grid-template-columns: 1fr; text-align: center; padding-top: 10px; }
+    .mast-meta, .mast-meta.right { text-align: center; }
+    .wordmark { font-size: 46px; white-space: normal; }
+    .tagline { grid-template-columns: 1fr; gap: 10px; }
+    .tagline .num { font-size: 58px; }
+    .block { grid-template-columns: 1fr; gap: 14px; }
+    .block-side { display: flex; flex-wrap: wrap; gap: 8px; }
+    .block-side .date { border: none; padding: 0; margin: 0; }
+    .sec-head { grid-template-columns: 1fr; }
+    .sec-head .folio { text-align: left; }
+    .tab-btn { font-size: 15px; padding: 10px 12px 12px; }
+    .top-bar { top: 12px; padding: 0 14px; }
+    .back-link, .lang-toggle { padding: 8px 12px; font-size: 10px; }
+    .cert-list li { grid-template-columns: 40px 1fr; }
+    .cert-list .date { grid-column: 2; }
+  }
+
+  /* PRINT */
+  @media print {
+    @page { size: A4; margin: 14mm 14mm; }
+    body { background: #fff; font-size: 10pt; color: #000; }
+    body::before, body::after { display: none; }
+    .shell { padding: 0; max-width: none; }
+    .tabs, .top-bar { display: none; }
+    .panel { display: block !important; animation: none; page-break-inside: avoid; margin-bottom: 14pt; }
+    .panel > * { animation: none; }
+    a { color: var(--accent); border-bottom: none; }
+    .tagline .num, .cert-list .glyph, .sec-head .kicker, .skill-card h4 { color: var(--accent); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a class="back-link" href="index.html" data-zh="← 返回首頁">← INDEX</a>
+  <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+    <span class="curr">EN</span> / 中
+  </button>
+</div>
+
+<div class="shell">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="mast-meta" data-zh="國立陽明交通大學<br>護理學系 · 2021–2025">
+      <span class="dot"></span>EST. 2021 · NYCU<br>
+      BACHELOR OF NURSING
+    </div>
+    <div class="wordmark" data-zh="蔡<em>汶伶</em>">Christina <em>Tsai</em></div>
+    <div class="mast-meta right" data-zh="註冊護理師 · 邁向 CRA<br>英文名 CHRISTINA TSAI">
+      REGISTERED NURSE · CRA-BOUND<br>
+      A.K.A. 蔡汶伶 (WEN-LING TSAI)
+    </div>
+  </header>
+
+  <div class="subline">
+    <span data-zh="第一卷 · <span class='issue'>2026 第四期</span>">VOL. I · <span class="issue">ISSUE Ⅳ / 2026</span></span>
+    <span>✉ <a href="mailto:christina900909@gmail.com">christina900909@gmail.com</a></span>
+    <span>☎ +886 960-628-908</span>
+    <span>in <a href="https://www.linkedin.com/in/wenling-tsai-327427370">linkedin</a></span>
+    <span data-zh="📍 台北，台灣">📍 TAIPEI, TAIWAN</span>
+  </div>
+
+  <!-- ============ TAGLINE ============ -->
+  <section class="tagline">
+    <div class="num">§</div>
+    <p data-zh="從腫瘤科臨床護理，邁向<b>臨床研究</b>。<span class='thin'>陽明交大護理出身的註冊護理師，將臨床嚴謹、文件紀律與病人倡權帶入 CRA 之路。</span>">
+      Transitioning from bedside oncology to <b>clinical research</b>.
+      <span class="thin">A registered nurse trained at NYCU — bringing clinical rigor, documentation discipline, and patient advocacy to the CRA path.</span>
+    </p>
+  </section>
+
+  <!-- ============ TABS ============ -->
+  <nav class="tabs" aria-label="Dossier sections">
+    <ul class="tab-list" role="tablist">
+      <li><button class="tab-btn active" data-tab="profile"><span class="idx">01</span><span class="tab-label" data-zh="摘要">Profile</span></button></li>
+      <li><button class="tab-btn" data-tab="experience"><span class="idx">02</span><span class="tab-label" data-zh="經歷">Experience</span></button></li>
+      <li><button class="tab-btn" data-tab="rotations"><span class="idx">03</span><span class="tab-label" data-zh="實習">Rotations</span></button></li>
+      <li><button class="tab-btn" data-tab="education"><span class="idx">04</span><span class="tab-label" data-zh="學歷">Education</span></button></li>
+      <li><button class="tab-btn" data-tab="credentials"><span class="idx">05</span><span class="tab-label" data-zh="證照">Credentials</span></button></li>
+      <li><button class="tab-btn" data-tab="strengths"><span class="idx">06</span><span class="tab-label" data-zh="特質">Strengths</span></button></li>
+    </ul>
+  </nav>
+
+  <!-- ============ PANELS ============ -->
+  <div class="panels">
+
+    <!-- ========= PROFILE ========= -->
+    <section class="panel active" id="profile">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第一章 · 側寫">Chapter 01 · Portrait</span>
+          <h2 data-zh="專業 <em>摘要</em>">Professional <em>Summary</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 01 章 / 共 06 章<br>CRA 候選人">F–01 / 06<br>CRA CANDIDATE</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="2025 — 至今">2025 — PRESENT</span>
+          <span class="tag accent" data-zh="邁向 CRA">CRA-BOUND</span>
+          <span class="tag" data-zh="護理師">RN</span>
+          <span class="tag">NYCU</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="臨床照護 → <em>臨床研究</em>">Bedside → <em>Clinical Research</em></h3>
+          <div class="role" data-zh="註冊護理師 · 尋求轉入 CRA 角色">Registered Nurse · seeking transition to CRA</div>
+          <p class="lede" data-zh="具備臨床經驗與扎實醫學基礎的註冊護理師，畢業於國立陽明交通大學。期望以臨床試驗監測員 (CRA) 身分進入臨床研究領域，將臨床工作流程、病人安全規範、不良事件通報與病歷文件管理的實務經驗延伸至研究現場。具備將複雜資訊以清晰語言傳達給不同對象的強溝通能力。">
+            Registered nurse with clinical experience and a strong foundation in medical sciences from National Yang Ming Chiao Tung University. Seeking to transition into clinical research as a Clinical Research Associate (CRA).
+          </p>
+          <ul>
+            <li data-zh="熟悉臨床工作流程、病人安全規範、不良事件辨識與通報、病歷與用藥文件管理。">Equipped with hands-on understanding of clinical workflows, patient safety protocols, adverse-event reporting, and medical-record documentation.</li>
+            <li data-zh="具備將複雜資訊以清晰、結構化、易於理解的語言傳達給不同背景對象的強溝通能力。">Strong communicator with proven ability to convey complex information clearly across diverse audiences.</li>
+            <li data-zh="學程中奠定 <b>IRB 流程與臨床試驗倫理</b> 的基礎，具文獻回顧、資料收集與統計分析經驗。">Coursework foundation in <b>IRB processes and clinical trial ethics</b>, with capstone experience in literature review, data collection, and statistical analysis.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= EXPERIENCE ========= -->
+    <section class="panel" id="experience">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第二章 · 實務">Chapter 02 · Practice</span>
+          <h2 data-zh="臨床 <em>經歷</em>">Clinical <em>Experience</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 02 章 / 共 06 章<br>臨床 · 教學">F–02 / 06<br>BEDSIDE · TEACHING</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="2025.10 — 2026.01">OCT 2025 — JAN 2026</span>
+          <span class="tag accent" data-zh="台大癌醫">NTU CANCER CTR</span>
+          <span class="tag" data-zh="腫瘤外科">ONCOLOGY</span>
+          <span class="tag" data-zh="護病比 1:6">RN 1:6</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="註冊護理師 — <em>台大癌醫中心</em>">Registered Nurse — <em>NTU Cancer Center</em></h3>
+          <div class="role" data-zh="一般腫瘤外科病房 · 護病比 1:6">General Oncology Surgery Ward · Nurse-to-patient ratio 1:6</div>
+          <p class="lede" data-zh="於高量能且須符合稽查標準的外科病房擔任第一線腫瘤護理 — 執行病人評估、化療給藥與不良事件監測，符合醫院與法規要求。">
+            Front-line oncology nursing in a high-volume, audit-ready surgical ward — executing patient assessment, chemotherapy administration, and adverse-event surveillance under hospital and regulatory standards.
+          </p>
+          <ul>
+            <li data-zh="依醫囑執行腫瘤病人的完整評估、生命徵象監測與護理介入。">Conducted comprehensive patient assessments, vital-sign monitoring, and nursing interventions per physician orders.</li>
+            <li data-zh="維護精確完整的病歷、護理紀錄與給藥文件。">Maintained accurate and detailed medical records, nursing notes, and medication administration documentation.</li>
+            <li data-zh="參與<b>不良事件 (AE) 辨識與通報流程</b>，符合院內與法規安全規範。">Participated in <b>adverse-event (AE) identification and incident reporting</b> in compliance with hospital and regulatory safety protocols.</li>
+            <li data-zh="與醫師、藥師、社工等跨領域團隊協作，提供以病人為中心的照護。">Collaborated with interdisciplinary healthcare teams — physicians, pharmacists, social workers — to deliver patient-centered care.</li>
+            <li data-zh="給藥並即時監測病人反應，將藥理學知識應用於臨床現場。">Administered medications and monitored patient responses, applying pharmacology knowledge in real-time clinical settings.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="2021.06 — 2025.09">JUN 2021 — SEP 2025</span>
+          <span class="tag" data-zh="家教">TUTOR</span>
+          <span class="tag" data-zh="教學">EDUCATION</span>
+          <span class="tag" data-zh="四年">4 YEARS</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="家教 <em>— 國中與國小</em>">Private Tutor <em>— Junior High &amp; Elementary</em></h3>
+          <div class="role" data-zh="自僱 · 多位學生組合">Self-employed · multi-student portfolio</div>
+          <ul>
+            <li data-zh="為不同學習需求學生設計個別化教案與教學策略。">Designed individualized lesson plans and adapted teaching strategies for diverse learners.</li>
+            <li data-zh="<b>提升學生英文段考成績 30 分</b>，協助學生通過 GEPT Kids 累積 7 顆星，促成學習動機與成就感。"><b>Raised students' English exam scores by 30 points</b> and helped them earn 7 stars in GEPT Kids, reinforcing motivation and achievement.</li>
+            <li data-zh="以清晰、結構化、易理解的語言傳達複雜學術概念。">Communicated complex academic concepts in clear, structured, and accessible language.</li>
+            <li data-zh="獨立管理多位學生的課程排程，展現時間管理與組織能力。">Managed independent scheduling across multiple students — demonstrated time management and organization.</li>
+            <li data-zh="透過持續溝通與進度回饋，與學生及家長建立穩固信任關係。">Built strong rapport with students and parents through consistent communication and progress updates.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= ROTATIONS ========= -->
+    <section class="panel" id="rotations">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第三章 · 病房">Chapter 03 · Wards</span>
+          <h2 data-zh="臨床 <em>實習</em>">Clinical <em>Rotations</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 03 章 / 共 06 章<br>北榮 · 台大 · 社區">F–03 / 06<br>TVGH · NTUH · COMMUNITY</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="2022.12 — 2025.04">DEC 2022 — APR 2025</span>
+          <span class="tag" data-zh="八科">8 SPECIALTIES</span>
+          <span class="tag" data-zh="約 30 位">~30 CASES</span>
+          <span class="tag accent" data-zh="三院區">3 SITES</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="臨床實習 <em>— 八科輪調，約 30 位個案</em>">Clinical Practicum <em>— 8 specialties, ~30 cases</em></h3>
+          <div class="role" data-zh="於台北主要教學醫院輪訓實習護生">Student nurse across Taipei's leading teaching hospitals</div>
+
+          <div class="sub-role">
+            <h4 data-zh="台北榮民總醫院 (TVGH)">Taipei Veterans General Hospital (TVGH)</h4>
+            <ul>
+              <li data-zh="輪調 <b>八個專科</b> — 心臟內科、泌尿外科、神經內科、神經外科、一般外科、婦科、兒科、精神科，每科一個月。">Rotated through <b>8 specialties</b> — Cardiology, Urology, Neurology, Neurosurgery, General Surgery, Gynecology, Pediatrics, and Psychiatry — one month each.</li>
+              <li data-zh="根據不同科別的臨床個案了解入院治療目標與既往病史，綜合個案身心狀況與獨特性給予客製化照護；照護過約 30 位個案。">Delivered individualized care for ~30 patients by integrating admission goals, medical history, and each patient's psychosocial context.</li>
+              <li data-zh="觀察並實際參與醫病溝通模式，學習跨角色對話的臨床現場。">Observed and actively participated in physician–patient communication models at the bedside.</li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="台大醫院總院 — 心臟外科 · 2024.07">NTU Hospital Main Branch — Cardiac Surgery, Jul 2024</h4>
+            <ul>
+              <li data-zh="針對重大手術個案，透過多次訪談與床邊陪伴建立治療關係。">Built therapeutic relationships with major-surgery patients through repeated interviews and bedside presence.</li>
+              <li data-zh="協助醫師、病人、家屬召開醫療會議，釐清並討論後續治療方向。">Facilitated multidisciplinary meetings with physicians, patients, and families to clarify future treatment directions.</li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="社區實習 — 北投吉慶里 · 2024.11 — 2025.01">Community Health Practicum — Beitou Jiqing-Li · Nov 2024 – Jan 2025</h4>
+            <ul>
+              <li data-zh="在專案中綜合評估里內地理位置、環境、經濟、社會福利、健康狀況與資源盤點，與團隊分工合作。">Team-based community assessment covering geography, environment, economy, social welfare, health status, and resource inventory.</li>
+              <li data-zh="以 <b>超慢跑</b> 為主要介入措施，設計前後測問卷，推動預防失智症衛教。">Designed a dementia-prevention education intervention using <b>slow-jogging</b> as the core activity, with pre/post questionnaires.</li>
+              <li data-zh="後續追蹤成效 1 個月，於約 30 名里民中 <b>提升活動意願 40%</b>。">Followed up for one month and <b>lifted resident participation intention by 40%</b> across ~30 community members.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= EDUCATION ========= -->
+    <section class="panel" id="education">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第四章 · 學術">Chapter 04 · Academia</span>
+          <h2 data-zh="學歷">Education</h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 04 章 / 共 06 章<br>護理學士 · 陽明交大">F–04 / 06<br>BSN · NYCU</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date">2021 — 2025</span>
+          <span class="tag" data-zh="護理學士">BSN</span>
+          <span class="tag accent" data-zh="陽明交大">NYCU</span>
+        </div>
+        <div class="block-body">
+          <h3 data-zh="國立陽明交通大學 <em>(NYCU)</em>">National Yang Ming Chiao Tung University <em>(NYCU)</em></h3>
+          <div class="role" data-zh="護理學 學士 · 四年制">Bachelor of Science in Nursing · 4-year program</div>
+          <p class="lede" data-zh="四年學程融合生醫科學基礎、臨床訓練、研究方法與醫療倫理，奠定扎實的護理專業與研究素養。">
+            A four-year program blending foundational biomedical sciences with clinical training, research methods, and healthcare ethics.
+          </p>
+          <ul>
+            <li data-zh="<b>主要課程：</b>健康評估與護理措施、生物統計、流行病學、藥理學、實證護理、研究倫理、成人護理、護理研究概論、護理管理與行政概論。"><b>Relevant coursework:</b> Research Methods, Biostatistics, Epidemiology, Pharmacology, Evidence-Based Nursing, Research Ethics, Health Assessment, Adult Nursing, Nursing Management.</li>
+            <li data-zh="完成畢業專題 — 文獻回顧、資料收集與統計分析。">Completed capstone project involving literature review, data collection, and statistical analysis.</li>
+            <li data-zh="於課程中奠定 <b>IRB 流程與臨床試驗倫理</b> 的基礎知識。">Gained foundational knowledge of <b>IRB processes and clinical trial ethics</b> through coursework.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= CREDENTIALS ========= -->
+    <section class="panel" id="credentials">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第五章 · 工具庫">Chapter 05 · Toolkit</span>
+          <h2 data-zh="技能與 <em>證照</em>">Skills &amp; <em>Certifications</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 05 章 / 共 06 章<br>執照 · 工具">F–05 / 06<br>LICENSES · TOOLS</div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card" data-num="/01">
+          <h4 data-zh="臨床與醫療">Clinical &amp; Medical</h4>
+          <p data-zh="病人評估與監測、病歷文件管理、不良事件通報、藥理學與給藥作業">Patient assessment &amp; monitoring, medical record documentation, adverse-event reporting, pharmacology &amp; medication administration</p>
+        </div>
+        <div class="skill-card" data-num="/02">
+          <h4 data-zh="溝通與人際">Communication</h4>
+          <p data-zh="跨領域團隊合作、醫療術語流暢、教學與教育訓練、利害關係人溝通">Cross-functional team collaboration, medical terminology fluency, training &amp; education delivery, stakeholder communication</p>
+        </div>
+        <div class="skill-card" data-num="/03">
+          <h4 data-zh="研究與分析">Research &amp; Analytical</h4>
+          <p data-zh="文獻回顧與資料收集、生物統計基礎、實證醫學實務、研究倫理與 IRB 概念">Literature review &amp; data collection, biostatistics fundamentals, evidence-based practice, research ethics &amp; IRB awareness</p>
+        </div>
+        <div class="skill-card" data-num="/04">
+          <h4 data-zh="專業特質">Professional Attributes</h4>
+          <p data-zh="細心有條理、具獨立作業能力、彈性高且學習力強、英語讀寫流暢">Detail-oriented &amp; organized, independent work capability, adaptable &amp; quick learner, proficient English reading/writing</p>
+        </div>
+        <div class="skill-card" data-num="/05">
+          <h4 data-zh="語言">Languages</h4>
+          <p data-zh="中文 <em>(母語)</em> · 英語 <em>(IELTS 7.5)</em>">Mandarin <em>(native)</em> · English <em>(IELTS 7.5)</em></p>
+        </div>
+        <div class="skill-card" data-num="/06">
+          <h4 data-zh="工具">Digital Tools</h4>
+          <p data-zh="Microsoft Office、ChatGPT、NotebookLM、Claude Code、Google Gemini">Microsoft Office Suite, ChatGPT, NotebookLM, Claude Code, Google Gemini</p>
+        </div>
+      </div>
+
+      <ul class="cert-list">
+        <li>
+          <div class="glyph">※</div>
+          <div class="body">
+            <h4 data-zh="中華民國護理師執照">Registered Nurse License · Taiwan</h4>
+            <p data-zh="通過國家考試的合格註冊護理師。">Licensed to practice as a registered nurse in Taiwan.</p>
+          </div>
+          <div class="date">AUG 2025</div>
+        </li>
+        <li>
+          <div class="glyph">✦</div>
+          <div class="body">
+            <h4 data-zh="ICH-GCP 國際認證">ICH-GCP International Certificate</h4>
+            <p data-zh="國際臨床試驗規範 (Good Clinical Practice) 認證。">Good Clinical Practice — international standard for clinical trials.</p>
+          </div>
+          <div class="date">MAR 2026</div>
+        </li>
+        <li>
+          <div class="glyph">◈</div>
+          <div class="body">
+            <h4>IELTS 7.5</h4>
+            <p data-zh="國際英語檢定 — 英語讀寫流暢。">International English Language Testing System — proficient reading and writing.</p>
+          </div>
+          <div class="date">SEP 2025</div>
+        </li>
+        <li>
+          <div class="glyph">✚</div>
+          <div class="body">
+            <h4 data-zh="BLS 基本救命術">BLS · Basic Life Support</h4>
+            <p data-zh="基本生命救命術證照。">Certified in adult and pediatric basic life support.</p>
+          </div>
+          <div class="date">MAR 2025</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========= STRENGTHS ========= -->
+    <section class="panel" id="strengths">
+      <div class="sec-head">
+        <div>
+          <span class="kicker" data-zh="第六章 · 性格">Chapter 06 · Character</span>
+          <h2 data-zh="特質與 <em>興趣</em>">Strengths &amp; <em>Interests</em></h2>
+        </div>
+        <div></div>
+        <div class="folio" data-zh="第 06 章 / 共 06 章<br>我是誰">F–06 / 06<br>WHO I AM</div>
+      </div>
+
+      <div class="block">
+        <div class="block-side">
+          <span class="date" data-zh="核心特質">CORE TRAITS</span>
+          <span class="tag" data-zh="細心">DETAIL</span>
+          <span class="tag" data-zh="同理心">EMPATHY</span>
+          <span class="tag" data-zh="自主學習">SELF-DIRECTED</span>
+          <span class="tag accent" data-zh="抗壓性">RESILIENCE</span>
+        </div>
+        <div class="block-body">
+
+          <div class="sub-role">
+            <h4 data-zh="細心與文件管理">Attention to Detail &amp; Documentation</h4>
+            <ul>
+              <li data-zh="在護理工作中持續執行病人多方評估，並將因果關係整理為完整護理紀錄歸檔，養成對臨床文件精準度與完整性的高度要求。">Continuously perform multi-faceted patient assessments and compile cause-effect relationships into structured nursing records — developing high standards for clinical documentation precision and completeness.</li>
+              <li data-zh="於常規照護與突發狀況並行時，在高壓環境下維持工作品質與判斷力。">Maintain judgment and quality under high-pressure environments where routine care and sudden events collide.</li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="跨領域溝通協調">Cross-Functional Communication</h4>
+            <ul>
+              <li data-zh="大學期間籌辦烘焙社與青幼社活動，負責跨部門協調與資源分配，訓練出專案規劃與團隊合作的執行力。">Organized university baking club and youth-service club events — handling cross-departmental coordination and resource allocation; built project-planning and teamwork execution.</li>
+              <li data-zh="護理工作期間頻繁與不同科室、病人、家屬溝通，善於依據對象調整溝通語言與方式。">Frequent communication with different departments, patients, and families; skilled at adjusting language and approach to each audience.</li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="同理心與利害關係人管理">Empathy &amp; Stakeholder Management</h4>
+            <ul>
+              <li data-zh="面對病人與家屬的多元需求，能同理其立場並妥善回應 — 此能力可直接轉化到臨床試驗中，與研究者和受試者的互動與關係維護。">Empathize with the diverse needs of patients and families — a skill directly transferable to CRA interactions with investigators and study subjects.</li>
+            </ul>
+          </div>
+
+          <div class="sub-role">
+            <h4 data-zh="自主學習與好奇心">Self-Directed Learning &amp; Curiosity</h4>
+            <ul>
+              <li data-zh="大學期間自主考取 <b>烘焙丙級證照</b> 與 <b>潛水證照</b>，展現將陌生知識內化為實作能力的自學力與行動力。">Independently earned a <b>baking Grade-C certificate</b> and a <b>diving license</b> during university — proving the ability to internalize unfamiliar knowledge into practice.</li>
+              <li data-zh="目前自行摸索 AI 程式工具 (ChatGPT、Claude、NotebookLM) 應用於專案自動化與工作流程優化。">Currently exploring AI tools (ChatGPT, Claude, NotebookLM) for workflow automation and project optimization.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ COLOPHON ============ -->
+  <footer class="colophon">
+    <h3 data-zh="歡迎洽談：<b>臨床試驗監測員 (CRA)</b> 職缺、臨床試驗協調工作，以及將臨床嚴謹帶入研究方法的 <b>醫療創新</b> 職位。">
+      Open to <b>Clinical Research Associate (CRA)</b> opportunities, clinical trial coordination, and <b>healthcare innovation</b> roles where bedside rigor meets research methodology.
+    </h3>
+    <div class="links">
+      <a href="mailto:christina900909@gmail.com" data-zh="✉ 電子郵件">✉ EMAIL</a>
+      <a href="https://www.linkedin.com/in/wenling-tsai-327427370">in LINKEDIN</a>
+      <a href="tel:+886960628908">☎ +886 960-628-908</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ========== TAB NAV ==========
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.tab;
+      tabs.forEach(t => t.classList.toggle('active', t === btn));
+      panels.forEach(p => {
+        const isActive = p.id === id;
+        p.classList.toggle('active', isActive);
+        if (isActive) {
+          p.style.animation = 'none';
+          void p.offsetWidth;
+          p.style.animation = '';
+          p.querySelectorAll(':scope > *').forEach(el => {
+            el.style.animation = 'none';
+            void el.offsetWidth;
+            el.style.animation = '';
+          });
+        }
+      });
+      document.querySelector('.tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.matches('input, textarea')) return;
+    const active = document.querySelector('.tab-btn.active');
+    const list = Array.from(tabs);
+    const i = list.indexOf(active);
+    if (e.key === 'ArrowRight') list[(i + 1) % list.length].click();
+    if (e.key === 'ArrowLeft')  list[(i - 1 + list.length) % list.length].click();
+  });
+
+  // ========== LANGUAGE TOGGLE ==========
+  const translatable = document.querySelectorAll('[data-zh]');
+  translatable.forEach(el => { el.dataset.en = el.innerHTML; });
+
+  const toggle = document.getElementById('langToggle');
+
+  function setLang(lang) {
+    translatable.forEach(el => {
+      el.innerHTML = el.dataset[lang === 'zh' ? 'zh' : 'en'];
+    });
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+    toggle.innerHTML = lang === 'zh'
+      ? 'EN / <span class="curr">中</span>'
+      : '<span class="curr">EN</span> / 中';
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+
+  toggle.addEventListener('click', () => {
+    const curr = document.documentElement.lang === 'zh-Hant' ? 'zh' : 'en';
+    setLang(curr === 'en' ? 'zh' : 'en');
+  });
+
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved === 'zh') setLang('zh');
+  } catch(e) {}
+</script>
+</body>
+</html>
