@@ -573,6 +573,40 @@
   }
   .block-body h3 em { font-style: italic; color: var(--accent); }
   html[lang="zh-Hant"] .block-body h3 em { font-style: normal; }
+
+  /* 媒體報導預覽：先放縮圖，點了才換成播放器——開頁不必載入 YouTube */
+  .press-strip {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px; margin: 20px 0 4px; max-width: 760px;
+  }
+  .press-card {
+    overflow: hidden; border: 1px solid var(--ink); background: var(--ink);
+    box-shadow: 4px 5px 0 0 var(--accent); transition: transform .15s, box-shadow .15s;
+  }
+  .press-card:has(.press-thumb:hover), .press-card:has(.press-thumb:focus-visible) {
+    transform: translate(-2px, -2px); box-shadow: 6px 7px 0 0 var(--accent);
+  }
+  .press-thumb {
+    position: relative; display: block; width: 100%; padding: 0; border: 0;
+    background: none; cursor: pointer; line-height: 0;
+  }
+  .press-card img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+  .press-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 2px 14px rgba(0,0,0,.4);
+  }
+  .press-play::after {
+    content: ""; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%);
+    border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent #fff;
+  }
+  .press-meta {
+    display: block; padding: 9px 11px; text-align: left; background: var(--ink); color: var(--paper);
+  }
+  .press-meta b { display: block; font-size: .82rem; font-weight: 700; }
+  .press-meta i { display: block; font-style: normal; font-size: .7rem; opacity: .68; margin-top: 2px; }
+  .press-card iframe { display: block; width: 100%; aspect-ratio: 16/9; border: 0; }
+  @media print { .press-strip { display: none; } }
   .block-body .role {
     font-family: "Newsreader", "Noto Serif TC", serif;
     font-style: italic;
@@ -978,6 +1012,23 @@
             <li data-zh="登上<b>公視新聞</b>（2025 年 2 月 19 日），透過與台北榮民總醫院（TVGH）聯合記者會。<a href='https://www.youtube.com/watch?v=za70fA9GLbw'>新聞連結</a>">Featured on <b>PTS National News</b> (Feb 19, 2025) via joint press conference with Taipei Veterans General Hospital (TVGH). <a href="https://www.youtube.com/watch?v=za70fA9GLbw">News</a></li>
             <li data-zh="受訪於<b>非凡財經新聞</b>（2026 年 9 月 17 日）— 於 2026 台灣創新技術博覽會示範動作捕捉即時檢測。<a href='https://youtu.be/kP2GGODZDzM'>新聞報導</a>">Interviewed on <b>USTV Financial News</b> (Sep 17, 2026) — demonstrating real-time motion-capture assessment at Taiwan Innotech Expo 2026. <a href="https://youtu.be/kP2GGODZDzM">Coverage</a></li>
           </ul>
+
+          <div class="press-strip">
+            <div class="press-card">
+              <button type="button" class="press-thumb" data-yt="kP2GGODZDzM" aria-label="Play USTV Financial News coverage">
+                <img src="thumb-ustv-news.webp" alt="" loading="lazy" decoding="async">
+                <span class="press-play" aria-hidden="true"></span>
+              </button>
+              <span class="press-meta"><b data-zh="非凡財經新聞 · 受訪">USTV Financial News · interview</b><i data-zh="2026 創博會 · 動作捕捉即時檢測">Innotech Expo 2026 · motion capture</i></span>
+            </div>
+            <div class="press-card">
+              <button type="button" class="press-thumb" data-yt="za70fA9GLbw" aria-label="Play PTS National News coverage">
+                <img src="thumb-pts-news.webp" alt="" loading="lazy" decoding="async">
+                <span class="press-play" aria-hidden="true"></span>
+              </button>
+              <span class="press-meta"><b data-zh="公視新聞 · 報導">PTS National News · feature</b><i data-zh="2025 陽明交大 × 台北榮總記者會">2025 NYCU × TVGH press conference</i></span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1891,6 +1942,22 @@
       portrait.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
   }
+
+  // ========== PRESS PREVIEWS ==========
+  // 縮圖點了才換成 iframe：開頁不必付 YouTube 的載入成本，標題列保留不動，
+  // 語言切換掃描到的 data-zh 元素因此不會被抽掉。
+  document.querySelectorAll('.press-thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.yt;
+      if (!id) return;
+      const frame = document.createElement('iframe');
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+      frame.title = btn.getAttribute('aria-label') || 'News coverage';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      frame.allowFullscreen = true;
+      btn.replaceWith(frame);
+    });
+  });
 
   // ========== LANGUAGE TOGGLE ==========
   const translatable = document.querySelectorAll('[data-zh]');
